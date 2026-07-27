@@ -1,804 +1,357 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>anaxa.ai &mdash; Applied AI for Complex Industries</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>anaxa.ai — Applied AI for Complex Industries</title>
+<meta name="description" content="AnaxaAI is an applied AI studio building production-grade AI for consumer health, energy, and industrial operations." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;600;700;800&family=IBM+Plex+Mono:wght@300;400;500;600&family=Archivo:wdth,wght@62..125,500..800&display=swap" rel="stylesheet" />
 <style>
-:root {
-  --bg:        #07090f;
-  --bg2:       #0d1018;
-  --bg3:       #131720;
-  --gold:      #d4952a;
-  --gold-lt:   #f0b84a;
-  --teal:      #3dbfa0;
-  --text:      #ede9e0;
-  --text-mid:  #9b9690;
-  --text-dim:  #5a5650;
-  --border:    rgba(255,255,255,0.07);
-  --border-md: rgba(255,255,255,0.12);
-  --r:   4px;
-  --rlg: 10px;
+:root{
+  --bg:#e8e8e5; --bg2:#e2e2de; --bg3:#eeeeeb;
+  --ink:#131313; --body:#45453f; --mid:#55554f; --soft:#6a6a64; --dim:#82827b;
+  --hair:rgba(0,0,0,.14); --hair2:rgba(0,0,0,.16); --accent:#c1440e;
 }
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: 'DM Sans', sans-serif;
-  font-size: 17px;
-  line-height: 1.7;
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
-a { color: inherit; text-decoration: none; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'IBM Plex Mono',monospace;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--ink);text-decoration:none}
+a:hover{color:var(--accent)}
+::selection{background:var(--ink);color:var(--bg)}
+strong{font-weight:600;color:var(--ink)}
+.wrap{max-width:1680px;margin:0 auto;padding:0 28px}
+.mono-label{font-size:10.5px;letter-spacing:.18em;color:var(--dim);text-transform:uppercase}
+h2.sec{font-family:'Martian Mono',monospace;font-weight:700;font-size:clamp(22px,2.3vw,33px);line-height:1.14;letter-spacing:-.05em;text-transform:uppercase}
+p.copy{font-size:14px;line-height:1.8;color:var(--body)}
 
-/* NAV */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 52px; height: 68px;
-  background: rgba(7,9,15,0.88);
-  backdrop-filter: blur(18px);
-  border-bottom: 1px solid var(--border);
-}
-.logo {
-  font-family: 'Syne', sans-serif; font-weight: 800;
-  font-size: 20px; letter-spacing: -0.5px;
-  display: flex; align-items: center; gap: 8px;
-}
-.logo-dot {
-  width: 7px; height: 7px; border-radius: 50%;
-  background: var(--gold);
-  animation: blink 3s ease-in-out infinite;
-}
-@keyframes blink { 0%,100% { opacity:1; } 50% { opacity:0.35; } }
-.nav-links {
-  display: flex; align-items: center; gap: 32px;
-  list-style: none; font-size: 14px; color: var(--text-mid);
-}
-.nav-links a:hover { color: var(--text); transition: color .2s; }
-.nav-cta {
-  font-size: 13px; font-weight: 500; padding: 9px 20px;
-  border: 1px solid var(--border-md); border-radius: var(--r);
-  background: transparent; cursor: pointer; color: var(--text);
-  transition: all .2s;
-}
-.nav-cta:hover { border-color: var(--gold); color: var(--gold); background: rgba(212,149,42,.06); }
-
-/* LAYOUT */
-.wrap { max-width: 1140px; margin: 0 auto; padding: 0 52px; }
-section { padding: 96px 0; }
-.divider { height: 1px; background: var(--border); }
+/* HEADER */
+header{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:24px;height:62px;padding:0 28px;background:rgba(232,232,229,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--hair)}
+.logo{font-family:'Archivo',sans-serif;font-weight:800;font-variation-settings:'wdth' 118;font-size:17px;letter-spacing:-.03em;line-height:1}
+.logo i{font-style:normal;color:var(--accent)}
+.logo-foot{font-family:'Archivo',sans-serif;font-weight:800;font-variation-settings:'wdth' 118;font-size:14px;letter-spacing:-.03em;text-transform:none;color:var(--ink)}
+nav{display:flex;align-items:center;gap:22px;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.nav-cta{border:1px solid var(--ink);padding:7px 14px;background:var(--ink);color:var(--bg)}
+.nav-cta:hover{background:var(--accent);border-color:var(--accent);color:#fff}
 
 /* HERO */
-.hero { padding-top: 158px; padding-bottom: 110px; position: relative; overflow: hidden; }
-.hero::before {
-  content:''; position: absolute; top:-220px; right:-180px;
-  width: 680px; height: 680px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(212,149,42,.055) 0%, transparent 70%);
-  pointer-events: none;
-}
-.hero::after {
-  content:''; position: absolute; bottom:-80px; left:-80px;
-  width: 460px; height: 460px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(61,191,160,.04) 0%, transparent 70%);
-  pointer-events: none;
-}
-.eyebrow {
-  display: inline-flex; align-items: center; gap: 10px;
-  font-family: 'DM Mono', monospace; font-size: 11.5px;
-  letter-spacing: .13em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 26px;
-}
-.eyebrow::before { content:''; display: block; width: 22px; height: 1px; background: var(--gold); }
-h1 {
-  font-family: 'Syne', sans-serif; font-weight: 800;
-  font-size: clamp(46px, 6vw, 80px);
-  line-height: 1.0; letter-spacing: -2px;
-  max-width: 800px; margin-bottom: 26px;
-}
-h1 em { font-style: normal; color: var(--gold-lt); }
-.hero-sub {
-  font-size: 18px; line-height: 1.65;
-  color: var(--text-mid); max-width: 540px;
-  margin-bottom: 46px; font-weight: 300;
-}
-.hero-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
-
-/* BUTTONS */
-.btn-p {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: var(--gold); color: #07050a;
-  font-weight: 600; font-size: 14px; letter-spacing: .02em;
-  padding: 14px 26px; border-radius: var(--r);
-  border: none; cursor: pointer; transition: all .2s;
-}
-.btn-p:hover { background: var(--gold-lt); transform: translateY(-1px); }
-.btn-s {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: transparent; color: var(--text); font-size: 14px;
-  padding: 13px 22px; border-radius: var(--r);
-  border: 1px solid var(--border-md); cursor: pointer; transition: all .2s;
-}
-.btn-s:hover { border-color: var(--text-mid); }
+.hero{position:relative;padding-top:62px;border-bottom:1px solid var(--hair);
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><path d='M70 64v12M64 70h12' stroke='rgba(0,0,0,0.22)' stroke-width='1'/></svg>")}
+.meta{position:relative;z-index:1;display:flex;flex-wrap:wrap;align-items:center;gap:12px 34px;padding:11px 28px;border-bottom:1px solid var(--hair);font-size:10.5px;letter-spacing:.14em;color:var(--dim);text-transform:uppercase;max-width:1680px;margin:0 auto}
+.meta b{color:var(--ink);font-weight:400}
+.rotor-layer{position:absolute;inset:62px 0 0 0;z-index:0;pointer-events:none}
+turbine-rotor{position:absolute;inset:-8% -6% -8% 18%}
+.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,560px) 1fr;padding:84px 28px 34px;max-width:1680px;margin:0 auto;min-height:74vh;align-items:start}
+.badge{display:inline-block;background:var(--ink);color:var(--bg);font-size:11px;letter-spacing:.18em;padding:6px 12px;margin-bottom:30px}
+h1{font-family:'Martian Mono',monospace;font-weight:800;font-size:clamp(38px,4.6vw,66px);line-height:1.02;letter-spacing:-.055em;margin-bottom:30px;text-transform:uppercase}
+.hero-sub{font-size:15px;line-height:1.75;color:var(--body);max-width:480px;margin-bottom:34px;text-wrap:pretty}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+.btn-p,.btn-s{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:13px 20px}
+.btn-p{background:var(--ink);color:var(--bg)}
+.btn-p:hover{background:var(--accent);color:#fff}
+.btn-s{border:1px solid rgba(0,0,0,.3)}
+.btn-s:hover{border-color:var(--ink)}
+.hero-side{align-self:end;justify-self:end;text-align:right;font-size:10.5px;letter-spacing:.12em;color:var(--dim);text-transform:uppercase;padding-top:40px}
+.hero-side .rule{border-top:1px dashed var(--accent);margin:8px 0 8px auto;width:140px}
+.dot-pulse{animation:pulse 2.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
 
 /* MARQUEE */
-.strip {
-  padding: 18px 0;
-  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
-  background: var(--bg2); overflow: hidden;
-}
-.track {
-  display: flex; gap: 56px; width: max-content; white-space: nowrap;
-  animation: scroll 24s linear infinite;
-}
-.track:hover { animation-play-state: paused; }
-@keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-.track-item {
-  font-family: 'DM Mono', monospace; font-size: 11px;
-  letter-spacing: .15em; text-transform: uppercase; color: var(--text-dim);
-  display: flex; align-items: center; gap: 20px;
-}
-.track-item::after { content:'·'; color: var(--gold); font-size: 16px; }
+.strip{border-bottom:1px solid var(--hair);overflow:hidden;padding:13px 0;background:var(--bg2)}
+.track{display:flex;gap:44px;width:max-content;white-space:nowrap;animation:marq 34s linear infinite;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--soft)}
+.track span{display:flex;align-items:center;gap:44px}
+.track i{color:var(--accent);font-style:normal}
+@keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* SECTION HEADERS */
-.sec-label {
-  font-family: 'DM Mono', monospace; font-size: 11px;
-  letter-spacing: .14em; text-transform: uppercase; color: var(--teal);
-  margin-bottom: 18px; display: flex; align-items: center; gap: 12px;
-}
-.sec-label::before { content:''; display: block; width: 18px; height: 1px; background: var(--teal); }
-.sec-h2 {
-  font-family: 'Syne', sans-serif; font-weight: 700;
-  font-size: clamp(26px, 3vw, 40px);
-  line-height: 1.1; letter-spacing: -1px;
-  margin-bottom: 56px; max-width: 520px;
-}
+/* SPLIT SECTIONS */
+section.bordered{border-bottom:1px solid var(--hair)}
+.split{display:grid;grid-template-columns:1.05fr 1fr}
+.split-a{padding:78px 56px 78px 0;border-right:1px solid var(--hair)}
+.split-b{padding:78px 0 78px 56px}
+.split-b--pad{padding-top:78px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--hair2);max-width:560px;margin-top:40px}
+.stat{padding:20px 16px;border-right:1px solid var(--hair2)}
+.stat:last-child{border-right:none}
+.stat-n{font-family:'Martian Mono',monospace;font-weight:700;font-size:26px;letter-spacing:-.05em}
+.stat-l{font-size:10px;letter-spacing:.16em;color:var(--dim);text-transform:uppercase;margin-top:6px}
+.row{display:grid;grid-template-columns:40px 1fr;gap:18px;border-top:1px solid var(--hair2);padding:20px 0}
+.row-n{font-size:10.5px;letter-spacing:.1em;color:var(--accent);padding-top:3px}
+.row-t{font-size:13px;letter-spacing:.05em;text-transform:uppercase;font-weight:500}
+.row-d{font-size:12.5px;line-height:1.68;color:var(--mid);margin-top:5px}
 
-/* ABOUT SPLIT */
-.split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
-.split-left h2 {
-  font-family: 'Syne', sans-serif; font-weight: 700;
-  font-size: clamp(28px, 3.2vw, 42px);
-  line-height: 1.1; letter-spacing: -1px; margin-bottom: 22px;
-}
-.split-left p { color: var(--text-mid); font-weight: 300; font-size: 15.5px; margin-bottom: 14px; }
-.split-left p strong { color: var(--text); font-weight: 500; }
-.stats {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 1px; margin-top: 48px;
-  border: 1px solid var(--border); border-radius: var(--rlg); overflow: hidden;
-}
-.stat {
-  background: var(--bg2); padding: 22px 18px; text-align: center;
-  border-right: 1px solid var(--border);
-}
-.stat:last-child { border-right: none; }
-.stat-n {
-  font-family: 'Syne', sans-serif; font-weight: 700;
-  font-size: 32px; color: var(--gold-lt); letter-spacing: -1px;
-}
-.stat-l { font-size: 11px; color: var(--text-dim); letter-spacing: .08em; text-transform: uppercase; margin-top: 4px; }
-
-/* INDUSTRY CARDS */
-.industries { display: flex; flex-direction: column; gap: 2px; }
-.ind-card {
-  background: var(--bg2); border: 1px solid var(--border); border-radius: var(--r);
-  padding: 18px 22px; display: flex; align-items: center; gap: 18px;
-  transition: all .25s; cursor: default;
-}
-.ind-card:hover { border-color: var(--border-md); background: var(--bg3); transform: translateX(4px); }
-.ind-icon {
-  width: 38px; height: 38px; flex-shrink: 0;
-  border-radius: var(--r); display: flex; align-items: center; justify-content: center; font-size: 17px;
-}
-.ind-name { font-weight: 500; font-size: 14.5px; }
-.ind-desc { font-size: 12.5px; color: var(--text-dim); margin-top: 2px; }
-
-/* SERVICES */
-.svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-.svc {
-  background: var(--bg2); border: 1px solid var(--border);
-  padding: 34px 30px; position: relative; overflow: hidden; transition: all .3s;
-}
-.svc:hover { background: var(--bg3); border-color: var(--border-md); }
-.svc::before {
-  content: attr(data-n); position: absolute; top: 22px; right: 22px;
-  font-family: 'DM Mono', monospace; font-size: 10.5px; color: var(--text-dim);
-}
-.svc-icon {
-  width: 42px; height: 42px; border: 1px solid var(--border-md); border-radius: var(--r);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 19px; margin-bottom: 22px;
-}
-.svc-title {
-  font-family: 'Syne', sans-serif; font-weight: 600;
-  font-size: 17px; margin-bottom: 10px; letter-spacing: -.2px;
-}
-.svc-desc { font-size: 13.5px; line-height: 1.65; color: var(--text-mid); font-weight: 300; }
-.svc-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 22px; }
-.svc-tag {
-  font-size: 10.5px; font-family: 'DM Mono', monospace;
-  color: var(--text-dim); padding: 3px 9px;
-  border: 1px solid var(--border); border-radius: 100px;
-}
-
-/* CASE STUDIES */
-.cases { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-.case {
-  background: var(--bg2); border: 1px solid var(--border);
-  padding: 40px 36px; transition: all .25s; position: relative; overflow: hidden;
-}
-.case:hover { background: var(--bg3); border-color: var(--border-md); }
-.case-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px; gap: 12px; }
-.case-sector {
-  font-family: 'DM Mono', monospace; font-size: 10.5px;
-  letter-spacing: .13em; text-transform: uppercase; color: var(--text-dim);
-}
-.case-status {
-  font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: .1em;
-  text-transform: uppercase; padding: 4px 10px; border-radius: 100px;
-  border: 1px solid var(--border-md); white-space: nowrap;
-}
-.case-status.live { color: var(--teal); border-color: rgba(61,191,160,.3); background: rgba(61,191,160,.06); }
-.case-status.dev  { color: var(--gold-lt); border-color: rgba(212,149,42,.3); background: rgba(212,149,42,.06); }
-.case-title {
-  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 21px;
-  letter-spacing: -.4px; line-height: 1.15; margin-bottom: 26px; max-width: 90%;
-}
-.case-rows { display: flex; flex-direction: column; gap: 15px; }
-.case-row { display: grid; grid-template-columns: 118px 1fr; gap: 16px; align-items: start; }
-.case-k {
-  font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .09em;
-  text-transform: uppercase; color: var(--teal); padding-top: 3px; line-height: 1.4;
-}
-.case-v { font-size: 13.5px; line-height: 1.6; color: var(--text-mid); font-weight: 300; }
-.case-v strong { color: var(--text); font-weight: 500; }
-
-/* HOW WE WORK */
-.how {
-  background: var(--bg2); border: 1px solid var(--border); border-radius: var(--rlg);
-  padding: 76px; display: grid; grid-template-columns: 1fr 1fr; gap: 76px; align-items: start;
-  position: relative; overflow: hidden;
-}
-.how::before {
-  content:''; position: absolute; top:0; right:0; width:280px; height:280px;
-  background: radial-gradient(circle at top right, rgba(61,191,160,.06) 0%, transparent 70%);
-  pointer-events: none;
-}
-.how h2 {
-  font-family: 'Syne', sans-serif; font-weight: 700;
-  font-size: clamp(26px, 2.8vw, 38px);
-  line-height: 1.1; letter-spacing: -1px; margin-bottom: 18px;
-}
-.how > div > p { font-size: 15px; line-height: 1.7; color: var(--text-mid); font-weight: 300; margin-bottom: 12px; }
-.how-list { display: flex; flex-direction: column; gap: 2px; }
-.how-item {
-  display: flex; align-items: flex-start; gap: 18px;
-  padding: 18px 22px; background: var(--bg); border: 1px solid var(--border);
-  border-radius: var(--r); transition: border-color .2s;
-}
-.how-item:hover { border-color: var(--border-md); }
-.how-n { font-family: 'DM Mono', monospace; font-size: 11px; color: var(--teal); flex-shrink: 0; margin-top: 3px; }
-.how-t { font-weight: 500; font-size: 14.5px; margin-bottom: 4px; }
-.how-d { font-size: 13px; color: var(--text-mid); line-height: 1.6; font-weight: 300; }
-
-/* PRINCIPLES */
-.principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
-.principle {
-  background: var(--bg2); border: 1px solid var(--border);
-  padding: 30px 26px; transition: all .25s;
-}
-.principle:hover { background: var(--bg3); border-color: var(--border-md); }
-.pr-n { font-family: 'DM Mono', monospace; font-size: 10.5px; color: var(--gold); margin-bottom: 14px; }
-.pr-t { font-family: 'Syne', sans-serif; font-weight: 600; font-size: 16.5px; margin-bottom: 10px; letter-spacing: -.2px; }
-.pr-d { font-size: 13px; line-height: 1.65; color: var(--text-mid); font-weight: 300; }
+/* GRIDS */
+.grid3,.grid2{display:grid;border-top:1px solid var(--hair2);border-left:1px solid var(--hair2)}
+.grid3{grid-template-columns:repeat(3,1fr)}
+.grid2{grid-template-columns:repeat(2,1fr)}
+.cell{border-right:1px solid var(--hair2);border-bottom:1px solid var(--hair2);padding:30px 26px 26px;display:flex;flex-direction:column}
+.cell:hover{background:var(--bg3)}
+.cell-top{display:flex;justify-content:space-between;font-size:10.5px;letter-spacing:.12em;color:var(--dim);margin-bottom:34px}
+.cell-t{font-family:'Martian Mono',monospace;font-weight:700;font-size:14.5px;letter-spacing:-.03em;text-transform:uppercase;margin-bottom:14px}
+.cell-d{font-size:13px;line-height:1.75;color:var(--mid);margin-bottom:22px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.tag{font-size:10px;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(0,0,0,.2);padding:4px 8px;color:var(--soft)}
+.case{border-right:1px solid var(--hair2);border-bottom:1px solid var(--hair2);padding:34px 32px}
+.case-sector{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-bottom:22px}
+.case-t{font-family:'Martian Mono',monospace;font-weight:700;font-size:17px;line-height:1.25;letter-spacing:-.04em;text-transform:uppercase;margin-bottom:28px;max-width:92%}
+.case-row{display:grid;grid-template-columns:132px 1fr;gap:18px;border-top:1px solid rgba(0,0,0,.12);padding:14px 0}
+.case-k{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);line-height:1.6}
+.case-v{font-size:13px;line-height:1.7;color:var(--body)}
 
 /* CONTACT */
-.contact-wrap {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
-}
-.contact-left h2 {
-  font-family: 'Syne', sans-serif; font-weight: 800;
-  font-size: clamp(34px, 4vw, 54px);
-  line-height: 1.05; letter-spacing: -2px; margin-bottom: 16px;
-}
-.contact-left h2 em { font-style: normal; color: var(--gold-lt); }
-.contact-left p { font-size: 15px; color: var(--text-mid); font-weight: 300; line-height: 1.7; margin-bottom: 32px; }
-.contact-detail {
-  display: flex; align-items: center; gap: 12px;
-  font-family: 'DM Mono', monospace; font-size: 13px;
-  color: var(--text-mid); letter-spacing: .04em;
-  padding: 14px 18px;
-  border: 1px solid var(--border); border-radius: var(--r);
-  background: var(--bg2);
-}
-.contact-detail-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
-.contact-form { display: flex; flex-direction: column; gap: 12px; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.form-group { display: flex; flex-direction: column; gap: 6px; }
-.form-group label {
-  font-size: 11.5px; font-family: 'DM Mono', monospace;
-  letter-spacing: .1em; text-transform: uppercase; color: var(--text-dim);
-}
-.form-group input,
-.form-group textarea,
-.form-group select {
-  background: var(--bg2); border: 1px solid var(--border);
-  border-radius: var(--r); padding: 13px 16px;
-  color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 14px;
-  outline: none; transition: border-color .2s; resize: none;
-  -webkit-appearance: none;
-}
-.form-group select option { background: var(--bg2); color: var(--text); }
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus { border-color: var(--border-md); }
-.form-group input::placeholder,
-.form-group textarea::placeholder { color: var(--text-dim); }
-.form-group textarea { height: 120px; }
-.form-submit {
-  display: flex; align-items: center; justify-content: space-between;
-  margin-top: 4px; flex-wrap: wrap; gap: 12px;
-}
-.form-note { font-size: 12px; color: var(--text-dim); }
-.form-success {
-  display: none; padding: 16px 20px;
-  background: rgba(61,191,160,.08); border: 1px solid rgba(61,191,160,.2);
-  border-radius: var(--r); font-size: 14px; color: var(--teal);
-  font-family: 'DM Mono', monospace; letter-spacing: .04em;
-}
+h2.big{font-family:'Martian Mono',monospace;font-weight:800;font-size:clamp(34px,4vw,56px);line-height:1.02;letter-spacing:-.055em;text-transform:uppercase}
+h2.big em{font-style:normal;color:var(--accent)}
+.mailto{display:inline-flex;align-items:center;gap:12px;border:1px solid rgba(0,0,0,.25);padding:13px 18px;font-size:13px;letter-spacing:.06em}
+.mailto:hover{border-color:var(--ink)}
+.mailto i{width:6px;height:6px;background:var(--accent);display:block}
+form{display:grid;gap:16px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{display:grid;gap:8px;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+input,select,textarea{background:transparent;border:1px solid rgba(0,0,0,.22);padding:12px 14px;font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ink);outline:none;-webkit-appearance:none;border-radius:0}
+input:focus,select:focus,textarea:focus{border-color:var(--ink)}
+textarea{height:118px;resize:none}
+.submit{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.submit span{font-size:11px;color:var(--dim);letter-spacing:.06em}
+button{background:var(--ink);color:var(--bg);border:none;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:13px 22px;cursor:pointer}
+button:hover{background:var(--accent);color:#fff}
+#formSuccess{display:none;border:1px solid var(--accent);padding:22px 24px;font-size:13px;letter-spacing:.06em}
 
-/* FOOTER */
-footer {
-  border-top: 1px solid var(--border); padding: 34px 52px;
-  display: flex; align-items: center; justify-content: space-between;
-  font-size: 13px; color: var(--text-dim);
-}
-.footer-logo { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 15px; color: var(--text-mid); }
+footer{max-width:1680px;margin:0 auto;padding:26px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
 
-/* ANIMS */
-@keyframes up { from { opacity:0; transform: translateY(22px); } to { opacity:1; transform: translateY(0); } }
-.hero .eyebrow  { animation: up .6s ease both; }
-.hero h1        { animation: up .7s .1s ease both; }
-.hero .hero-sub { animation: up .7s .2s ease both; }
-.hero-actions   { animation: up .7s .3s ease both; }
-
-/* RESPONSIVE */
-@media (max-width: 920px) {
-  nav { padding: 0 24px; }
-  .nav-links { display: none; }
-  .wrap { padding: 0 24px; }
-  section { padding: 68px 0; }
-  .split { grid-template-columns: 1fr; gap: 44px; }
-  .svc-grid { grid-template-columns: 1fr; }
-  .cases { grid-template-columns: 1fr; }
-  .case-row { grid-template-columns: 92px 1fr; gap: 12px; }
-  .how { grid-template-columns: 1fr; gap: 44px; padding: 44px 28px; }
-  .principles { grid-template-columns: repeat(2, 1fr); }
-  .contact-wrap { grid-template-columns: 1fr; gap: 44px; }
-  .form-row { grid-template-columns: 1fr; }
-  footer { flex-direction: column; gap: 10px; text-align: center; padding: 28px 24px; }
+@media (max-width:980px){
+  nav a:not(.nav-cta){display:none}
+  .hero-inner{grid-template-columns:1fr;min-height:0;padding-top:56px}
+  .hero-side{justify-self:start;text-align:left;padding-top:56px}
+  .hero-side .rule{margin-left:0}
+  turbine-rotor{inset:auto 0 0 0;height:60%;opacity:.9}
+  .split{grid-template-columns:1fr}
+  .split-a{padding:56px 0;border-right:none}
+  .split-b,.split-b--pad{padding:0 0 56px}
+  .grid3,.grid2{grid-template-columns:1fr}
+  .pair{grid-template-columns:1fr}
+  footer{justify-content:flex-start}
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="logo"><span class="logo-dot"></span>anaxa.ai</div>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#work">Work</a></li>
-    <li><a href="#approach">Approach</a></li>
-  </ul>
-  <a href="#contact" class="nav-cta">Get in Touch</a>
-</nav>
+<header>
+  <a href="#top" class="logo">anaxa<i>.</i>ai</a>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#work">Work</a>
+    <a href="#approach">Approach</a>
+    <a href="#contact" class="nav-cta">Get in Touch</a>
+  </nav>
+</header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="wrap">
-    <div class="eyebrow">Applied AI</div>
-    <h1>Research.<br>Build. Ship.<br><em>Repeat.</em></h1>
-    <p class="hero-sub">
-      AnaxaAI is an applied AI studio working across industries where complexity is the norm &mdash; from consumer health to energy systems to generative media. We design, build, and ship production-grade AI.
-    </p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn-p">
-        Get in Touch
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="#07050a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a href="#services" class="btn-s">What We Do</a>
+<section class="hero" id="top">
+  <div class="meta">
+    <span>MODEL : <b>ANAXA_V1</b></span>
+    <span>PROGRAM : <b>APPLIED_AI</b></span>
+    <span style="margin-left:auto">0.96 &gt;&gt; 1.0</span>
+  </div>
+  <div class="rotor-layer"><turbine-rotor speed="0.28" line="#171717" dot="#000000"></turbine-rotor></div>
+  <div class="hero-inner">
+    <div>
+      <div class="badge">APPLIED AI</div>
+      <h1>Research.<br />Build. Ship.<br />Repeat.</h1>
+      <p class="hero-sub">AnaxaAI is an applied AI studio working across industries where complexity is the norm — from consumer health to energy systems to generative media. We design, build, and ship production-grade AI.</p>
+      <div class="actions">
+        <a href="#contact" class="btn-p">Get in Touch →</a>
+        <a href="#services" class="btn-s">What We Do</a>
+      </div>
+    </div>
+    <div class="hero-side">
+      <div>LAT: 53.5511° N</div>
+      <div>LON: 9.9937° E</div>
+      <div class="rule"></div>
+      <div style="color:var(--ink)">STATUS <span class="dot-pulse">●</span> OPEN FOR WORK</div>
     </div>
   </div>
 </section>
 
-<!-- MARQUEE -->
 <div class="strip">
-  <div class="track">
-    <span class="track-item">Consumer Health</span>
-    <span class="track-item">Energy &amp; Utilities</span>
-    <span class="track-item">Industrial AI</span>
-    <span class="track-item">Generative Image</span>
-    <span class="track-item">Agentic Systems</span>
-    <span class="track-item">Evals &amp; Reliability</span>
-    <span class="track-item">LLM Architecture</span>
-    <span class="track-item">AI Strategy</span>
-    <span class="track-item">Consumer Health</span>
-    <span class="track-item">Energy &amp; Utilities</span>
-    <span class="track-item">Industrial AI</span>
-    <span class="track-item">Generative Image</span>
-    <span class="track-item">Agentic Systems</span>
-    <span class="track-item">Evals &amp; Reliability</span>
-    <span class="track-item">LLM Architecture</span>
-    <span class="track-item">AI Strategy</span>
-  </div>
+  <div class="track" id="track"></div>
 </div>
 
-<!-- ABOUT -->
-<section id="about">
-  <div class="wrap">
-    <div class="split">
-      <div class="split-left">
-        <h2>Across verticals. Across hard constraints. Built to ship.</h2>
-        <p>AnaxaAI has shipped AI products across consumer health, energy, industrial operations, and creative media &mdash; in both B2B and B2C environments. Each one sharpened how we scope, build, and prove that a system actually works.</p>
-        <p>That range isn&apos;t a portfolio footnote. It&apos;s why we ask harder questions before we build, anticipate the edge cases others miss, and don&apos;t make promises we can&apos;t back with evidence.</p>
-        <p>What AnaxaAI does now is focused: <strong>applied AI research and product development</strong> &mdash; end-to-end, production-grade, built to outlast the first launch.</p>
-        <div class="stats">
-          <div class="stat"><div class="stat-n">5+</div><div class="stat-l">Verticals</div></div>
-          <div class="stat"><div class="stat-n">B2B&middot;C</div><div class="stat-l">Both Sides</div></div>
-          <div class="stat"><div class="stat-n">Eval</div><div class="stat-l">First, Every Build</div></div>
-        </div>
+<section class="bordered" id="about">
+  <div class="wrap split">
+    <div class="split-a">
+      <div class="mono-label" style="margin-bottom:26px">01 / Studio</div>
+      <h2 class="sec" style="margin-bottom:24px;max-width:560px">Across verticals. Across hard constraints. Built to ship.</h2>
+      <p class="copy" style="margin-bottom:14px;max-width:560px">AnaxaAI has shipped AI products across consumer health, energy, industrial operations, and creative media — in both B2B and B2C environments. Each one sharpened how we scope, build, and prove that a system actually works.</p>
+      <p class="copy" style="margin-bottom:14px;max-width:560px">That range isn't a portfolio footnote. It's why we ask harder questions before we build, anticipate the edge cases others miss, and don't make promises we can't back with evidence.</p>
+      <p class="copy" style="max-width:560px">What AnaxaAI does now is focused: <strong>applied AI research and product development</strong> — end-to-end, production-grade, built to outlast the first launch.</p>
+      <div class="stats">
+        <div class="stat"><div class="stat-n">5+</div><div class="stat-l">Verticals</div></div>
+        <div class="stat"><div class="stat-n">B2B·C</div><div class="stat-l">Both Sides</div></div>
+        <div class="stat"><div class="stat-n">EVAL</div><div class="stat-l">First, Every Build</div></div>
       </div>
-      <div class="industries">
-        <div class="ind-card">
-          <div class="ind-icon" style="background:rgba(212,149,42,.08);">&#9889;</div>
-          <div>
-            <div class="ind-name">Energy &amp; Utilities</div>
-            <div class="ind-desc">Predictive analytics, grid-edge intelligence, operational monitoring</div>
-          </div>
-        </div>
-        <div class="ind-card">
-          <div class="ind-icon" style="background:rgba(212,149,42,.06);">&#9881;</div>
-          <div>
-            <div class="ind-name">Industrial &amp; Enterprise</div>
-            <div class="ind-desc">Anomaly detection, process intelligence, B2B decision tools</div>
-          </div>
-        </div>
-        <div class="ind-card">
-          <div class="ind-icon" style="background:rgba(61,191,160,.08);">&#43521;</div>
-          <div>
-            <div class="ind-name">Consumer Health</div>
-            <div class="ind-desc">B2C health apps, personal wellness AI, user-facing health data</div>
-          </div>
-        </div>
-        <div class="ind-card">
-          <div class="ind-icon" style="background:rgba(255,255,255,.04);">&#129302;</div>
-          <div>
-            <div class="ind-name">AI / ML Systems</div>
-            <div class="ind-desc">LLM architecture, agentic pipelines, model integration</div>
-          </div>
-        </div>
-        <div class="ind-card">
-          <div class="ind-icon" style="background:rgba(180,120,220,.08);">&#127912;</div>
-          <div>
-            <div class="ind-name">Art &amp; Generative Media</div>
-            <div class="ind-desc">AI image generation apps &mdash; consumer-facing creative tools</div>
-          </div>
-        </div>
-      </div>
+    </div>
+    <div class="split-b">
+      <div class="mono-label" style="margin-bottom:26px">Sectors</div>
+      <div id="sectors"></div>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
+<section class="bordered" id="services">
+  <div class="wrap" style="padding-top:78px;padding-bottom:78px">
+    <div class="mono-label" style="margin-bottom:26px">02 / What We Build</div>
+    <h2 class="sec" style="margin-bottom:54px;max-width:640px">Six practices. One focus: AI that holds up in production.</h2>
+    <div class="grid3" id="services-grid"></div>
+  </div>
+</section>
 
-<!-- SERVICES -->
-<section id="services">
-  <div class="wrap">
-    <div class="sec-label">What We Build</div>
-    <h2 class="sec-h2">Six practices. One focus: AI that holds up in production.</h2>
-    <div class="svc-grid">
-      <div class="svc" data-n="01">
-        <div class="svc-icon">&#129504;</div>
-        <div class="svc-title">AI Architecture</div>
-        <p class="svc-desc">System design for LLM-powered products &mdash; retrieval layers, data pipelines, and deployment infrastructure built for reliability and long-term maintainability, not proof-of-concept speed.</p>
-        <div class="svc-tags">
-          <span class="svc-tag">RAG</span>
-          <span class="svc-tag">LLM Integration</span>
-          <span class="svc-tag">System Design</span>
+<section class="bordered" id="work">
+  <div class="wrap" style="padding-top:78px;padding-bottom:78px">
+    <div class="mono-label" style="margin-bottom:26px">03 / Selected Work</div>
+    <h2 class="sec" style="margin-bottom:54px;max-width:640px">Two problems. Two definitions of “working.”</h2>
+    <div class="grid2" id="cases"></div>
+  </div>
+</section>
+
+<section class="bordered" id="approach" style="background:var(--bg2)">
+  <div class="wrap split">
+    <div class="split-a">
+      <div class="mono-label" style="margin-bottom:26px">04 / How We Work</div>
+      <h2 class="sec" style="margin-bottom:24px;max-width:520px">Methodology matters more than enthusiasm.</h2>
+      <p class="copy" style="margin-bottom:14px;max-width:520px">Most AI projects don't stall because the technology is wrong. They stall because the process around it — how requirements are set, how quality is measured, how systems get handed over — borrows from software norms that don't account for probabilistic outputs.</p>
+      <p class="copy" style="max-width:520px">AnaxaAI has built a practice around closing that gap. Explicit evaluation criteria before writing a line of code. Documented edge cases and limits before launch. Monitoring after.</p>
+    </div>
+    <div class="split-b split-b--pad" id="steps"></div>
+  </div>
+</section>
+
+<section class="bordered">
+  <div class="wrap" style="padding-top:78px;padding-bottom:78px">
+    <div class="mono-label" style="margin-bottom:26px">05 / Principles</div>
+    <h2 class="sec" style="margin-bottom:54px;max-width:640px">Three things we don't compromise on.</h2>
+    <div class="grid3" id="principles"></div>
+  </div>
+</section>
+
+<section class="bordered" id="contact">
+  <div class="wrap split">
+    <div class="split-a">
+      <div class="mono-label" style="margin-bottom:26px">06 / Contact</div>
+      <h2 class="big" style="margin-bottom:22px">Hard problem?<br /><em>Good.</em></h2>
+      <p class="copy" style="margin-bottom:30px;max-width:460px">AnaxaAI works best with people who have real constraints, real data, and a low tolerance for vague promises. Tell us what you're working on.</p>
+      <a class="mailto" href="mailto:hello@anaxa.ai"><i></i>hello@anaxa.ai</a>
+    </div>
+    <div class="split-b">
+      <form id="contactForm">
+        <div class="pair">
+          <label>Name<input type="text" name="name" placeholder="Your name" required /></label>
+          <label>Email<input type="email" name="email" placeholder="you@company.com" required /></label>
         </div>
-      </div>
-      <div class="svc" data-n="02">
-        <div class="svc-icon">&#128279;</div>
-        <div class="svc-title">Agentic Systems</div>
-        <p class="svc-desc">Multi-step autonomous agents for research, operations, and document-heavy workflows. We design orchestration layers and tool interfaces that hold up outside controlled demos.</p>
-        <div class="svc-tags">
-          <span class="svc-tag">Multi-Agent</span>
-          <span class="svc-tag">Tool Use</span>
-          <span class="svc-tag">Orchestration</span>
+        <label>What's this about?
+          <select name="subject">
+            <option value="AI Architecture">AI Architecture</option>
+            <option value="Agentic Systems">Agentic Systems</option>
+            <option value="Evals and Reliability">Evals &amp; Reliability</option>
+            <option value="Consumer Health AI">Consumer Health AI</option>
+            <option value="Energy and Industrial AI">Energy &amp; Industrial AI</option>
+            <option value="AI Strategy">AI Strategy</option>
+            <option value="Other">Other</option>
+          </select>
+        </label>
+        <label>Message<textarea name="message" placeholder="Tell us about your project, problem, or question..." required></textarea></label>
+        <div class="submit">
+          <span>Reply within 24 hours.</span>
+          <button type="submit" id="submitBtn">Send Message</button>
         </div>
-      </div>
-      <div class="svc" data-n="03">
-        <div class="svc-icon">&#128737;</div>
-        <div class="svc-title">Evals &amp; Reliability</div>
-        <p class="svc-desc">Evaluation frameworks, guardrails, and red-teaming for high-stakes AI systems where a wrong answer carries real cost. We define what &ldquo;working&rdquo; actually means &mdash; then build the scaffolding to prove and sustain it over time.</p>
-        <div class="svc-tags">
-          <span class="svc-tag">Evals</span>
-          <span class="svc-tag">Guardrails</span>
-          <span class="svc-tag">Red-teaming</span>
-          <span class="svc-tag">Monitoring</span>
-        </div>
-      </div>
-      <div class="svc" data-n="04">
-        <div class="svc-icon">&#9877;</div>
-        <div class="svc-title">Consumer Health AI</div>
-        <p class="svc-desc">AI-powered consumer health products &mdash; personal wellness tools, health data interfaces, and behaviour-change features designed with user trust and data responsibility at the centre.</p>
-        <div class="svc-tags">
-          <span class="svc-tag">B2C</span>
-          <span class="svc-tag">Health Data</span>
-          <span class="svc-tag">Personalisation</span>
-        </div>
-      </div>
-      <div class="svc" data-n="05">
-        <div class="svc-icon">&#9889;</div>
-        <div class="svc-title">Energy &amp; Industrial AI</div>
-        <p class="svc-desc">Operational intelligence for energy and industrial environments &mdash; predictive analytics, anomaly detection, and AI tools for technical teams working with real-time and safety-critical systems.</p>
-        <div class="svc-tags">
-          <span class="svc-tag">Predictive</span>
-          <span class="svc-tag">OT / IT</span>
-          <span class="svc-tag">Edge ML</span>
-        </div>
-      </div>
-      <div class="svc" data-n="06">
-        <div class="svc-icon">&#128208;</div>
-        <div class="svc-title">AI Strategy</div>
-        <p class="svc-desc">Diagnostic assessments, build-vs-buy frameworks, and transformation roadmaps. We help leadership teams make durable AI decisions &mdash; not just launch pilots that quietly expire.</p>
-        <div class="svc-tags">
-          <span class="svc-tag">Roadmaps</span>
-          <span class="svc-tag">Governance</span>
-          <span class="svc-tag">ROI Modeling</span>
-        </div>
-      </div>
+      </form>
+      <div id="formSuccess">MESSAGE SENT — WE'LL BE IN TOUCH SHORTLY.</div>
     </div>
   </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- CASE STUDIES -->
-<section id="work">
-  <div class="wrap">
-    <div class="sec-label">Selected Work</div>
-    <h2 class="sec-h2">Two problems. Two definitions of &ldquo;working.&rdquo;</h2>
-    <div class="cases">
-      <div class="case">
-        <div class="case-top">
-          <span class="case-sector">Industrial Operations</span>
-        </div>
-        <div class="case-title">Condition-based maintenance &amp; anomaly detection</div>
-        <div class="case-rows">
-          <div class="case-row">
-            <span class="case-k">Constraint</span>
-            <span class="case-v">Reconciling inconsistent data across separate source systems, encoding domain-expert knowledge, and proving the system was reliable enough for operators to act on.</span>
-          </div>
-          <div class="case-row">
-            <span class="case-k">What we built</span>
-            <span class="case-v">A condition-based maintenance and troubleshooting advisor that monitors equipment health and surfaces early signs of performance degradation for technical teams.</span>
-          </div>
-          <div class="case-row">
-            <span class="case-k">&ldquo;Working&rdquo; meant</span>
-            <span class="case-v">Detecting performance degradation &mdash; including impending failures &mdash; at least <strong>5 days ahead</strong>, validated against historical operating data.</span>
-          </div>
-          <div class="case-row">
-            <span class="case-k">Outcome</span>
-            <span class="case-v">Hit the 5-day detection target on historical data and delivered actionable troubleshooting advisories the operations team could work from.</span>
-          </div>
-        </div>
-      </div>
-      <div class="case">
-        <div class="case-top">
-          <span class="case-sector">Clinical Care</span>
-        </div>
-        <div class="case-title">Agentic care companion for private clinics</div>
-        <div class="case-rows">
-          <div class="case-row">
-            <span class="case-k">Constraint</span>
-            <span class="case-v">In a clinical setting, a wrong answer isn&apos;t a bug &mdash; it&apos;s a risk to a patient. Correctness, safe escalation, and a complete audit trail are non-negotiable.</span>
-          </div>
-          <div class="case-row">
-            <span class="case-k">What we&apos;re building</span>
-            <span class="case-v">An agentic care companion that supports patients between visits, with clinician oversight designed into the workflow rather than bolted on.</span>
-          </div>
-          <div class="case-row">
-            <span class="case-k">&ldquo;Working&rdquo; means</span>
-            <span class="case-v">Deterministic escalation to a human for anything outside safe bounds, full auditability of every interaction, and evaluation against clinician-defined criteria before any patient is involved.</span>
-          </div>
-          <div class="case-row">
-            <span class="case-k">Status</span>
-            <span class="case-v">In design and build. We&apos;re looking for a clinic partner to run the first supervised pilot.</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- HOW WE WORK -->
-<section id="approach">
-  <div class="wrap">
-    <div class="how">
-      <div>
-        <div class="sec-label" style="margin-bottom:18px;">How We Work</div>
-        <h2>Methodology matters more than enthusiasm.</h2>
-        <p>Most AI projects don&apos;t stall because the technology is wrong. They stall because the process around it &mdash; how requirements are set, how quality is measured, how systems get handed over &mdash; borrows from software norms that don&apos;t account for probabilistic outputs.</p>
-        <p>AnaxaAI has built a practice around closing that gap. Explicit evaluation criteria before writing a line of code. Documented edge cases and limits before launch. Monitoring after.</p>
-      </div>
-      <ul class="how-list">
-        <li class="how-item">
-          <span class="how-n">01</span>
-          <div>
-            <div class="how-t">Define &ldquo;working&rdquo; before we start</div>
-            <div class="how-d">Every engagement begins with evaluation criteria. What does success look like and how do we measure it? We won&apos;t build without this.</div>
-          </div>
-        </li>
-        <li class="how-item">
-          <span class="how-n">02</span>
-          <div>
-            <div class="how-t">Treat complexity as the brief</div>
-            <div class="how-d">Legacy infrastructure, regulatory constraints, messy data &mdash; these aren&apos;t obstacles. They&apos;re the actual design requirements. We work with reality as it is.</div>
-          </div>
-        </li>
-        <li class="how-item">
-          <span class="how-n">03</span>
-          <div>
-            <div class="how-t">Full-stack accountability</div>
-            <div class="how-d">From architecture and integration to deployment and post-launch monitoring, we take ownership of what we ship &mdash; no handoffs to ambiguity.</div>
-          </div>
-        </li>
-        <li class="how-item">
-          <span class="how-n">04</span>
-          <div>
-            <div class="how-t">Safety and governance built in</div>
-            <div class="how-d">Guardrails, audit trails, and access controls aren&apos;t afterthoughts. We design them in from the start, especially in health, energy, and industrial contexts.</div>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- PRINCIPLES -->
-<section>
-  <div class="wrap">
-    <div class="sec-label">Our Principles</div>
-    <h2 class="sec-h2">Three things we don&apos;t compromise on.</h2>
-    <div class="principles">
-      <div class="principle">
-        <div class="pr-n">01</div>
-        <div class="pr-t">Ship, don&apos;t pilot</div>
-        <p class="pr-d">Most enterprise AI never makes it past the pilot. We design for production from day one &mdash; with the evaluation criteria, monitoring, and rollback plans that a live system actually needs.</p>
-      </div>
-      <div class="principle">
-        <div class="pr-n">02</div>
-        <div class="pr-t">Earn trust with evidence</div>
-        <p class="pr-d">We don&apos;t ask you to trust the AI. We hand over the eval results, benchmarks, and audit trails &mdash; so you can see for yourself where the system is reliable and where it isn&apos;t.</p>
-      </div>
-      <div class="principle">
-        <div class="pr-n">03</div>
-        <div class="pr-t">Don&apos;t oversell</div>
-        <p class="pr-d">We&apos;ll tell you when a problem isn&apos;t ready for AI, or when a simpler tool would do the job. Honest scoping up front costs less than a project that quietly falls apart later.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="wrap">
-    <div class="contact-wrap">
-      <div class="contact-left">
-        <div class="sec-label">Contact</div>
-        <h2>Hard problem?<br><em>Good.</em></h2>
-        <p>AnaxaAI works best with people who have real constraints, real data, and a low tolerance for vague promises. Tell us what you&apos;re working on.</p>
-        <div class="contact-detail">
-          <span class="contact-detail-dot"></span>
-          <span id="cemail">hello&#64;anaxa.ai</span>
-        </div>
-      </div>
-      <div>
-        <form class="contact-form" id="contactForm">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="fname">Name</label>
-              <input type="text" id="fname" name="name" placeholder="Your name" required>
-            </div>
-            <div class="form-group">
-              <label for="femail">Email</label>
-              <input type="email" id="femail" name="email" placeholder="you@company.com" required>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="fsubject">What&apos;s this about?</label>
-            <select id="fsubject" name="subject">
-              <option value="" disabled selected>Select a topic</option>
-              <option value="AI Architecture">AI Architecture</option>
-              <option value="Agentic Systems">Agentic Systems</option>
-              <option value="Evals and Reliability">Evals &amp; Reliability</option>
-              <option value="Consumer Health AI">Consumer Health AI</option>
-              <option value="Energy and Industrial AI">Energy &amp; Industrial AI</option>
-              <option value="AI Strategy">AI Strategy</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="fmessage">Message</label>
-            <textarea id="fmessage" name="message" placeholder="Tell us about your project, problem, or question..." required></textarea>
-          </div>
-          <div class="form-submit">
-            <span class="form-note">We typically reply within 24 hours.</span>
-            <button type="submit" id="submitBtn" class="btn-p" style="font-size:14px;">
-              Send Message
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="#07050a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-          </div>
-        </form>
-        <div class="form-success" id="formSuccess">
-          Message sent &mdash; we&apos;ll be in touch shortly.
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
 <footer>
-  <div class="footer-logo">anaxa.ai</div>
-  <div>&copy; 2026 AnaxaAI &nbsp;&middot;&nbsp; Anaxa Sdn Bhd &nbsp;&middot;&nbsp; All rights reserved</div>
+  <span class="logo-foot">anaxa<i style="font-style:normal;color:var(--accent)">.</i>ai</span>
+  <span>© 2026 AnaxaAI · Anaxa Sdn Bhd · All rights reserved</span>
+  <span>VERSION 1.0_READY</span>
 </footer>
 
+<script src="turbine.js"></script>
 <script>
-(function() {
-  var form = document.getElementById('contactForm');
-  var success = document.getElementById('formSuccess');
-  var btn = document.getElementById('submitBtn');
-  var endpoint = 'https://formspree.io/f/' + 'mjgpgpbl';
+(function(){
+  var marquee=['Consumer Health','Energy & Utilities','Industrial AI','Generative Image','Agentic Systems','Evals & Reliability','LLM Architecture','AI Strategy'];
+  document.getElementById('track').innerHTML=marquee.concat(marquee).map(function(m){return '<span>'+m+'<i>+</i></span>';}).join('');
 
-  form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
-    var data = new FormData(form);
-    fetch(endpoint, {
-      method: 'POST',
-      body: data,
-      headers: { 'Accept': 'application/json' }
-    }).then(function(res) {
-      if (res.ok) {
-        form.style.display = 'none';
-        success.style.display = 'block';
-      } else {
-        btn.textContent = 'Try again';
-        btn.disabled = false;
-      }
-    }).catch(function() {
-      btn.textContent = 'Try again';
-      btn.disabled = false;
-    });
+  var sectors=[
+    ['01','Energy & Utilities','Predictive analytics, grid-edge intelligence, operational monitoring'],
+    ['02','Industrial & Enterprise','Anomaly detection, process intelligence, B2B decision tools'],
+    ['03','Consumer Health','B2C health apps, personal wellness AI, user-facing health data'],
+    ['04','AI / ML Systems','LLM architecture, agentic pipelines, model integration'],
+    ['05','Art & Generative Media','AI image generation apps — consumer-facing creative tools']
+  ];
+  document.getElementById('sectors').innerHTML=sectors.map(function(s){
+    return '<div class="row"><span class="row-n">'+s[0]+'</span><div><div class="row-t">'+s[1]+'</div><div class="row-d">'+s[2]+'</div></div></div>';
+  }).join('');
+
+  var services=[
+    ['01','ARCH','AI Architecture','System design for LLM-powered products — retrieval layers, data pipelines, and deployment infrastructure built for reliability and long-term maintainability, not proof-of-concept speed.',['RAG','LLM Integration','System Design']],
+    ['02','AGENT','Agentic Systems','Multi-step autonomous agents for research, operations, and document-heavy workflows. We design orchestration layers and tool interfaces that hold up outside controlled demos.',['Multi-Agent','Tool Use','Orchestration']],
+    ['03','EVAL','Evals & Reliability','Evaluation frameworks, guardrails, and red-teaming for high-stakes AI systems where a wrong answer carries real cost. We define what “working” actually means — then build the scaffolding to prove and sustain it.',['Evals','Guardrails','Red-teaming','Monitoring']],
+    ['04','HEALTH','Consumer Health AI','AI-powered consumer health products — personal wellness tools, health data interfaces, and behaviour-change features designed with user trust and data responsibility at the centre.',['B2C','Health Data','Personalisation']],
+    ['05','INDUS','Energy & Industrial AI','Operational intelligence for energy and industrial environments — predictive analytics, anomaly detection, and AI tools for technical teams working with real-time and safety-critical systems.',['Predictive','OT / IT','Edge ML']],
+    ['06','STRAT','AI Strategy','Diagnostic assessments, build-vs-buy frameworks, and transformation roadmaps. We help leadership teams make durable AI decisions — not just launch pilots that quietly expire.',['Roadmaps','Governance','ROI Modeling']]
+  ];
+  document.getElementById('services-grid').innerHTML=services.map(function(s){
+    return '<div class="cell"><div class="cell-top"><span>'+s[0]+'</span><span>'+s[1]+'</span></div>'+
+      '<div class="cell-t">'+s[2]+'</div><p class="cell-d">'+s[3]+'</p><div class="tags">'+
+      s[4].map(function(t){return '<span class="tag">'+t+'</span>';}).join('')+'</div></div>';
+  }).join('');
+
+  var cases=[
+    ['Industrial Operations','Condition-based maintenance & anomaly detection',[
+      ['Constraint','Reconciling inconsistent data across separate source systems, encoding domain-expert knowledge, and proving the system was reliable enough for operators to act on.'],
+      ['What we built','A condition-based maintenance and troubleshooting advisor that monitors equipment health and surfaces early signs of performance degradation for technical teams.'],
+      ['“Working” meant','Detecting performance degradation — including impending failures — at least <strong>5 days ahead</strong>, validated against historical operating data.'],
+      ['Outcome','Hit the 5-day detection target on historical data and delivered actionable troubleshooting advisories the operations team could work from.']
+    ]],
+    ['Clinical Care','Agentic care companion for private clinics',[
+      ['Constraint',"In a clinical setting, a wrong answer isn't a bug — it's a risk to a patient. Correctness, safe escalation, and a complete audit trail are non-negotiable."],
+      ["What we're building",'An agentic care companion that supports patients between visits, with clinician oversight designed into the workflow rather than bolted on.'],
+      ['“Working” means','Deterministic escalation to a human for anything outside safe bounds, full auditability of every interaction, and evaluation against clinician-defined criteria before any patient is involved.'],
+      ['Status',"In design and build. <strong>We're looking for a clinic partner</strong> to run the first supervised pilot."]
+    ]]
+  ];
+  document.getElementById('cases').innerHTML=cases.map(function(c){
+    return '<div class="case"><div class="case-sector">'+c[0]+'</div><div class="case-t">'+c[1]+'</div>'+
+      c[2].map(function(r){return '<div class="case-row"><span class="case-k">'+r[0]+'</span><span class="case-v">'+r[1]+'</span></div>';}).join('')+'</div>';
+  }).join('');
+
+  var steps=[
+    ['01','Define “working” before we start',"Every engagement begins with evaluation criteria. What does success look like and how do we measure it? We won't build without this."],
+    ['02','Treat complexity as the brief',"Legacy infrastructure, regulatory constraints, messy data — these aren't obstacles. They're the actual design requirements. We work with reality as it is."],
+    ['03','Full-stack accountability','From architecture and integration to deployment and post-launch monitoring, we take ownership of what we ship — no handoffs to ambiguity.'],
+    ['04','Safety and governance built in',"Guardrails, audit trails, and access controls aren't afterthoughts. We design them in from the start, especially in health, energy, and industrial contexts."]
+  ];
+  document.getElementById('steps').innerHTML=steps.map(function(s){
+    return '<div class="row" style="padding:22px 0"><span class="row-n">'+s[0]+'</span><div><div class="row-t">'+s[1]+'</div><div class="row-d">'+s[2]+'</div></div></div>';
+  }).join('');
+
+  var principles=[
+    ['01',"Ship, don't pilot",'Most enterprise AI never makes it past the pilot. We design for production from day one — with the evaluation criteria, monitoring, and rollback plans that a live system actually needs.'],
+    ['02','Earn trust with evidence',"We don't ask you to trust the AI. We hand over the eval results, benchmarks, and audit trails — so you can see for yourself where the system is reliable and where it isn't."],
+    ['03',"Don't oversell","We'll tell you when a problem isn't ready for AI, or when a simpler tool would do the job. Honest scoping up front costs less than a project that quietly falls apart later."]
+  ];
+  document.getElementById('principles').innerHTML=principles.map(function(p){
+    return '<div class="cell"><div class="cell-top" style="color:var(--accent)"><span>'+p[0]+'</span></div><div class="cell-t">'+p[1]+'</div><p class="cell-d" style="margin-bottom:0">'+p[2]+'</p></div>';
+  }).join('');
+
+  var form=document.getElementById('contactForm'),ok=document.getElementById('formSuccess'),btn=document.getElementById('submitBtn');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();btn.textContent='Sending...';btn.disabled=true;
+    fetch('https://formspree.io/f/mjgpgpbl',{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}})
+      .then(function(r){ if(r.ok){form.style.display='none';ok.style.display='block';} else {btn.textContent='Try again';btn.disabled=false;} })
+      .catch(function(){btn.textContent='Try again';btn.disabled=false;});
   });
 })();
 </script>
-
 </body>
 </html>
