@@ -227,6 +227,38 @@ h1 em { font-style: normal; color: var(--gold-lt); }
   border: 1px solid var(--border); border-radius: 100px;
 }
 
+/* CASE STUDIES */
+.cases { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+.case {
+  background: var(--bg2); border: 1px solid var(--border);
+  padding: 40px 36px; transition: all .25s; position: relative; overflow: hidden;
+}
+.case:hover { background: var(--bg3); border-color: var(--border-md); }
+.case-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px; gap: 12px; }
+.case-sector {
+  font-family: 'DM Mono', monospace; font-size: 10.5px;
+  letter-spacing: .13em; text-transform: uppercase; color: var(--text-dim);
+}
+.case-status {
+  font-family: 'DM Mono', monospace; font-size: 9.5px; letter-spacing: .1em;
+  text-transform: uppercase; padding: 4px 10px; border-radius: 100px;
+  border: 1px solid var(--border-md); white-space: nowrap;
+}
+.case-status.live { color: var(--teal); border-color: rgba(61,191,160,.3); background: rgba(61,191,160,.06); }
+.case-status.dev  { color: var(--gold-lt); border-color: rgba(212,149,42,.3); background: rgba(212,149,42,.06); }
+.case-title {
+  font-family: 'Syne', sans-serif; font-weight: 700; font-size: 21px;
+  letter-spacing: -.4px; line-height: 1.15; margin-bottom: 26px; max-width: 90%;
+}
+.case-rows { display: flex; flex-direction: column; gap: 15px; }
+.case-row { display: grid; grid-template-columns: 118px 1fr; gap: 16px; align-items: start; }
+.case-k {
+  font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: .09em;
+  text-transform: uppercase; color: var(--teal); padding-top: 3px; line-height: 1.4;
+}
+.case-v { font-size: 13.5px; line-height: 1.6; color: var(--text-mid); font-weight: 300; }
+.case-v strong { color: var(--text); font-weight: 500; }
+
 /* HOW WE WORK */
 .how {
   background: var(--bg2); border: 1px solid var(--border); border-radius: var(--rlg);
@@ -256,7 +288,7 @@ h1 em { font-style: normal; color: var(--gold-lt); }
 .how-d { font-size: 13px; color: var(--text-mid); line-height: 1.6; font-weight: 300; }
 
 /* PRINCIPLES */
-.principles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+.principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
 .principle {
   background: var(--bg2); border: 1px solid var(--border);
   padding: 30px 26px; transition: all .25s;
@@ -344,6 +376,8 @@ footer {
   section { padding: 68px 0; }
   .split { grid-template-columns: 1fr; gap: 44px; }
   .svc-grid { grid-template-columns: 1fr; }
+  .cases { grid-template-columns: 1fr; }
+  .case-row { grid-template-columns: 92px 1fr; gap: 12px; }
   .how { grid-template-columns: 1fr; gap: 44px; padding: 44px 28px; }
   .principles { grid-template-columns: repeat(2, 1fr); }
   .contact-wrap { grid-template-columns: 1fr; gap: 44px; }
@@ -360,6 +394,7 @@ footer {
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
+    <li><a href="#work">Work</a></li>
     <li><a href="#approach">Approach</a></li>
   </ul>
   <a href="#contact" class="nav-cta">Get in Touch</a>
@@ -368,10 +403,10 @@ footer {
 <!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <div class="eyebrow">AI Lab</div>
+    <div class="eyebrow">Applied AI</div>
     <h1>Research.<br>Build. Ship.<br><em>Repeat.</em></h1>
     <p class="hero-sub">
-      AnaxaAI is an AI lab working across industries where complexity is the norm &mdash; from consumer health to energy systems to generative media. We research, prototype, and ship production-grade AI.
+      AnaxaAI is an applied AI studio working across industries where complexity is the norm &mdash; from consumer health to energy systems to generative media. We design, build, and ship production-grade AI.
     </p>
     <div class="hero-actions">
       <a href="#contact" class="btn-p">
@@ -410,14 +445,14 @@ footer {
   <div class="wrap">
     <div class="split">
       <div class="split-left">
-        <h2>Across verticals. Across failure modes. Still building.</h2>
-        <p>AnaxaAI has shipped AI products across consumer health, energy, industrial operations, and creative media &mdash; in B2B and B2C environments. Some worked. Some didn&apos;t. All of them taught us something.</p>
-        <p>That range isn&apos;t just a portfolio footnote. It&apos;s why we ask harder questions before we build, design for failure modes others don&apos;t anticipate, and don&apos;t make promises we can&apos;t back up with evidence.</p>
+        <h2>Across verticals. Across hard constraints. Built to ship.</h2>
+        <p>AnaxaAI has shipped AI products across consumer health, energy, industrial operations, and creative media &mdash; in both B2B and B2C environments. Each one sharpened how we scope, build, and prove that a system actually works.</p>
+        <p>That range isn&apos;t a portfolio footnote. It&apos;s why we ask harder questions before we build, anticipate the edge cases others miss, and don&apos;t make promises we can&apos;t back with evidence.</p>
         <p>What AnaxaAI does now is focused: <strong>applied AI research and product development</strong> &mdash; end-to-end, production-grade, built to outlast the first launch.</p>
         <div class="stats">
           <div class="stat"><div class="stat-n">5+</div><div class="stat-l">Verticals</div></div>
           <div class="stat"><div class="stat-n">B2B&middot;C</div><div class="stat-l">Both Sides</div></div>
-          <div class="stat"><div class="stat-n">&infin;</div><div class="stat-l">Hard Lessons</div></div>
+          <div class="stat"><div class="stat-n">Eval</div><div class="stat-l">First, Every Build</div></div>
         </div>
       </div>
       <div class="industries">
@@ -492,7 +527,7 @@ footer {
       <div class="svc" data-n="03">
         <div class="svc-icon">&#128737;</div>
         <div class="svc-title">Evals &amp; Reliability</div>
-        <p class="svc-desc">Evaluation frameworks, guardrails, and red-teaming for AI systems where failure matters. We define what &ldquo;working&rdquo; actually means &mdash; then build the scaffolding to prove and sustain it over time.</p>
+        <p class="svc-desc">Evaluation frameworks, guardrails, and red-teaming for high-stakes AI systems where a wrong answer carries real cost. We define what &ldquo;working&rdquo; actually means &mdash; then build the scaffolding to prove and sustain it over time.</p>
         <div class="svc-tags">
           <span class="svc-tag">Evals</span>
           <span class="svc-tag">Guardrails</span>
@@ -536,6 +571,68 @@ footer {
 
 <div class="divider"></div>
 
+<!-- CASE STUDIES -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-label">Selected Work</div>
+    <h2 class="sec-h2">Two problems. Two definitions of &ldquo;working.&rdquo;</h2>
+    <div class="cases">
+      <div class="case">
+        <div class="case-top">
+          <span class="case-sector">Industrial Operations</span>
+          <span class="case-status live">Delivered</span>
+        </div>
+        <div class="case-title">Condition-based maintenance &amp; anomaly detection</div>
+        <div class="case-rows">
+          <div class="case-row">
+            <span class="case-k">Constraint</span>
+            <span class="case-v">Reconciling inconsistent data across separate source systems, encoding domain-expert knowledge, and proving the system was reliable enough for operators to act on.</span>
+          </div>
+          <div class="case-row">
+            <span class="case-k">What we built</span>
+            <span class="case-v">A condition-based maintenance and troubleshooting advisor that monitors equipment health and surfaces early signs of performance degradation for technical teams.</span>
+          </div>
+          <div class="case-row">
+            <span class="case-k">&ldquo;Working&rdquo; meant</span>
+            <span class="case-v">Detecting performance degradation &mdash; including impending failures &mdash; at least <strong>5 days ahead</strong>, validated against historical operating data.</span>
+          </div>
+          <div class="case-row">
+            <span class="case-k">Outcome</span>
+            <span class="case-v">Hit the 5-day detection target on historical data and delivered actionable troubleshooting advisories the operations team could work from.</span>
+          </div>
+        </div>
+      </div>
+      <div class="case">
+        <div class="case-top">
+          <span class="case-sector">Clinical Care</span>
+          <span class="case-status dev">In Development</span>
+        </div>
+        <div class="case-title">Agentic care companion for private clinics</div>
+        <div class="case-rows">
+          <div class="case-row">
+            <span class="case-k">Constraint</span>
+            <span class="case-v">In a clinical setting, a wrong answer isn&apos;t a bug &mdash; it&apos;s a risk to a patient. Correctness, safe escalation, and a complete audit trail are non-negotiable.</span>
+          </div>
+          <div class="case-row">
+            <span class="case-k">What we&apos;re building</span>
+            <span class="case-v">An agentic care companion that supports patients between visits, with clinician oversight designed into the workflow rather than bolted on.</span>
+          </div>
+          <div class="case-row">
+            <span class="case-k">&ldquo;Working&rdquo; means</span>
+            <span class="case-v">Deterministic escalation to a human for anything outside safe bounds, full auditability of every interaction, and evaluation against clinician-defined criteria before any patient is involved.</span>
+          </div>
+          <div class="case-row">
+            <span class="case-k">Status</span>
+            <span class="case-v">In design and build. <strong>We&apos;re looking for a clinic partner</strong> to run the first supervised pilot.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
 <!-- HOW WE WORK -->
 <section id="approach">
   <div class="wrap">
@@ -543,8 +640,8 @@ footer {
       <div>
         <div class="sec-label" style="margin-bottom:18px;">How We Work</div>
         <h2>Methodology matters more than enthusiasm.</h2>
-        <p>Most AI projects don&apos;t fail because the technology is wrong. They fail because the process around it &mdash; how requirements are set, how quality is measured, how systems get handed over &mdash; borrows from software norms that don&apos;t account for probabilistic outputs.</p>
-        <p>AnaxaAI has built a practice around closing that gap. Explicit evaluation criteria before writing a line of code. Documented failure modes before launch. Monitoring after.</p>
+        <p>Most AI projects don&apos;t stall because the technology is wrong. They stall because the process around it &mdash; how requirements are set, how quality is measured, how systems get handed over &mdash; borrows from software norms that don&apos;t account for probabilistic outputs.</p>
+        <p>AnaxaAI has built a practice around closing that gap. Explicit evaluation criteria before writing a line of code. Documented edge cases and limits before launch. Monitoring after.</p>
       </div>
       <ul class="how-list">
         <li class="how-item">
@@ -586,27 +683,22 @@ footer {
 <section>
   <div class="wrap">
     <div class="sec-label">Our Principles</div>
-    <h2 class="sec-h2">Four things we don&apos;t compromise on.</h2>
+    <h2 class="sec-h2">Three things we don&apos;t compromise on.</h2>
     <div class="principles">
       <div class="principle">
         <div class="pr-n">01</div>
         <div class="pr-t">Ship, don&apos;t pilot</div>
-        <p class="pr-d">The graveyard of enterprise AI is full of promising pilots. We design for production from day one &mdash; with the evaluation frameworks and rollback plans to match.</p>
+        <p class="pr-d">Most enterprise AI never makes it past the pilot. We design for production from day one &mdash; with the evaluation criteria, monitoring, and rollback plans that a live system actually needs.</p>
       </div>
       <div class="principle">
         <div class="pr-n">02</div>
         <div class="pr-t">Earn trust with evidence</div>
-        <p class="pr-d">We don&apos;t ask clients to trust the AI. We give them the benchmarks, evals, and audit trails they need to trust the system &mdash; and us.</p>
+        <p class="pr-d">We don&apos;t ask you to trust the AI. We hand over the eval results, benchmarks, and audit trails &mdash; so you can see for yourself where the system is reliable and where it isn&apos;t.</p>
       </div>
       <div class="principle">
         <div class="pr-n">03</div>
         <div class="pr-t">Don&apos;t oversell</div>
-        <p class="pr-d">We&apos;ll tell you when a problem isn&apos;t ready for AI. A bad project costs more than a lost deal &mdash; for both sides. Honest scoping is part of the work.</p>
-      </div>
-      <div class="principle">
-        <div class="pr-n">04</div>
-        <div class="pr-t">Failure is curriculum</div>
-        <p class="pr-d">We&apos;ve shipped things that didn&apos;t work. That experience shapes how we ask questions, what we test for, and why we build with genuine humility about what AI can and can&apos;t do.</p>
+        <p class="pr-d">We&apos;ll tell you when a problem isn&apos;t ready for AI, or when a simpler tool would do the job. Honest scoping up front costs less than a project that quietly falls apart later.</p>
       </div>
     </div>
   </div>
