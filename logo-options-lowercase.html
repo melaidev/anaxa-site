@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anaxa &mdash; lowercase logo options</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Inter:wght@400;500&family=Instrument+Serif&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #fafaf9; --cream: #fdfcf9;
+  --ink: #1a1a19; --ink-mid: #5e5e5a; --ink-dim: #96968f;
+  --line: rgba(26,26,25,0.13); --line-soft: rgba(26,26,25,0.07);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 980px; margin: 0 auto; padding: 48px 32px 90px; }
+h1 { font-family: 'Inter Tight', sans-serif; font-weight: 500; font-size: 32px; letter-spacing: -1px; margin-bottom: 10px; }
+.lede { color: var(--ink-mid); max-width: 640px; margin-bottom: 40px; }
+.mono { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: .08em; color: var(--ink-dim); }
+
+.card { border: 1px solid var(--line); border-radius: 10px; margin-bottom: 20px; overflow: hidden; background: #fff; }
+.card-head {
+  display: flex; align-items: baseline; gap: 14px;
+  padding: 14px 22px; border-bottom: 1px solid var(--line-soft); background: #f7f7f5;
+}
+.card-head h2 { font-family: 'Inter Tight', sans-serif; font-weight: 500; font-size: 17px; letter-spacing: -.3px; }
+.card-head p { font-size: 13.5px; color: var(--ink-mid); margin-left: auto; text-align: right; max-width: 450px; line-height: 1.5; }
+
+.row { display: grid; grid-template-columns: 180px 1fr 1fr; align-items: center; }
+.cell { padding: 26px 22px; border-right: 1px solid var(--line-soft); height: 100%; display: flex; flex-direction: column; justify-content: center; gap: 12px; }
+.cell:last-child { border-right: none; }
+.cell-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-dim); }
+.big { align-items: center; }
+.big svg { width: 56px; height: 56px; color: var(--ink); }
+
+.lock { display: flex; align-items: center; gap: 9px; padding: 11px 14px; border-radius: 6px; }
+.lock svg { width: 20px; height: 20px; flex-shrink: 0; color: var(--ink); }
+.lock-a { background: var(--paper); border: 1px solid var(--line-soft); }
+.lock-b { background: var(--cream); border: 1px solid var(--line-soft); }
+.name-sans { font-family: 'Inter Tight', sans-serif; font-weight: 600; font-size: 16px; letter-spacing: -.2px; }
+.name-serif { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 21px; letter-spacing: -.2px; }
+
+.tabbar { display: flex; align-items: flex-end; gap: 4px; background: #dfdfdb; padding: 7px 7px 0; border-radius: 8px 8px 0 0; }
+.tab { display: flex; align-items: center; gap: 7px; background: #fff; border-radius: 7px 7px 0 0; padding: 8px 14px 9px; font-size: 12px; color: #3c3c3a; white-space: nowrap; max-width: 190px; }
+.tab.dim { background: #ebebe7; color: #8a8a85; }
+.tab svg { width: 15px; height: 15px; flex-shrink: 0; color: var(--ink); }
+.tab-title { overflow: hidden; text-overflow: ellipsis; }
+.favrow { display: flex; align-items: flex-end; gap: 18px; }
+.fav { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.fav svg { color: var(--ink); }
+.fav .px { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; color: var(--ink-dim); }
+
+@media (max-width: 820px) {
+  .row { grid-template-columns: 1fr; }
+  .cell { border-right: none; border-bottom: 1px solid var(--line-soft); }
+  .card-head { flex-direction: column; gap: 6px; }
+  .card-head p { margin-left: 0; text-align: left; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Lowercase &ldquo;a&rdquo; marks</h1>
+  <p class="lede">Same three views as before: the mark large, the header lockup on both candidate backgrounds, and the favicon in a browser tab. All use the single-storey <em>&alpha;</em>-style a &mdash; the two-storey &ldquo;a&rdquo; has too much going on to survive at 16px.</p>
+  <div id="out"></div>
+</div>
+
+<script>
+var MARKS = [
+  {
+    n: '01', name: 'Tile',
+    note: 'Solid tile with the a knocked out. Strongest silhouette in a crowded tab bar.',
+    svg: '<rect width="64" height="64" rx="15" fill="currentColor"/>' +
+         '<circle cx="27" cy="37.5" r="10.5" fill="none" stroke="{{BG}}" stroke-width="4.5"/>' +
+         '<path d="M38 25v25" stroke="{{BG}}" stroke-width="4.5" stroke-linecap="round"/>'
+  },
+  {
+    n: '02', name: 'Outline a',
+    note: 'The letter reduced to a bowl and a stem. Quietest option; closest in spirit to the apex caret you liked.',
+    svg: '<circle cx="26" cy="38" r="14" fill="none" stroke="currentColor" stroke-width="5.5"/>' +
+         '<path d="M40 22v30" stroke="currentColor" stroke-width="5.5" stroke-linecap="round"/>'
+  },
+  {
+    n: '03', name: 'Solid a',
+    note: 'Filled bowl and bar. Bold and unmistakable at any size, and prints cleanly.',
+    svg: '<circle cx="26" cy="38" r="15" fill="currentColor"/>' +
+         '<rect x="37" y="17" width="9" height="37" rx="4.5" fill="currentColor"/>'
+  },
+  {
+    n: '04', name: 'Counter a',
+    note: 'Solid ring with the counter cut out, plus a full-height stem. The letter-shaped equivalent of the solid A.',
+    svg: '<path fill-rule="evenodd" clip-rule="evenodd" d="M25 54a16 16 0 1 0 0-32 16 16 0 0 0 0 32Zm0-9a7 7 0 1 0 0-14 7 7 0 0 0 0 14Z" fill="currentColor"/>' +
+         '<rect x="38" y="15" width="9" height="41" rx="4.5" fill="currentColor"/>'
+  },
+  {
+    n: '05', name: 'Aperture a',
+    note: 'The a held inside a ring. Softer and more product-like, but the busiest of the ring options at 16px.',
+    svg: '<circle cx="32" cy="32" r="22" fill="none" stroke="currentColor" stroke-width="5"/>' +
+         '<circle cx="29" cy="33" r="7" fill="none" stroke="currentColor" stroke-width="4.5"/>' +
+         '<path d="M36 26v14" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>'
+  },
+  {
+    n: '06', name: 'Bracketed a',
+    note: 'Reads as code without reaching for a terminal prompt. Pairs well with the mono labels on the site.',
+    svg: '<path d="M20 13h-8v38h8M44 13h8v38h-8" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>' +
+         '<circle cx="29" cy="34" r="7.5" fill="none" stroke="currentColor" stroke-width="4.5"/>' +
+         '<path d="M36.5 26v16" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>'
+  },
+  {
+    n: '07', name: 'Layered a',
+    note: 'The a with a second arc behind it &mdash; the stacked-caret idea rebuilt as a letter. Layers of a system.',
+    svg: '<path d="M26 18A20 20 0 0 0 26 58" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>' +
+         '<circle cx="28" cy="38" r="12" fill="none" stroke="currentColor" stroke-width="5"/>' +
+         '<path d="M40 24v28" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>'
+  },
+  {
+    n: '08', name: 'Three a&rsquo;s',
+    note: 'Three dots for the three a&rsquo;s in anaxa. Fully abstract &mdash; it does not read as a letter, but it is the most distinctive and the cleanest at 16px.',
+    svg: '<circle cx="32" cy="16" r="8" fill="currentColor"/>' +
+         '<circle cx="15" cy="46" r="8" fill="currentColor"/>' +
+         '<circle cx="49" cy="46" r="8" fill="currentColor"/>'
+  }
+];
+
+function svg(mark, bg, attrs) {
+  return '<svg ' + (attrs || '') + ' viewBox="0 0 64 64" fill="none" aria-hidden="true">' +
+    mark.svg.replace(/\{\{BG\}\}/g, bg) + '</svg>';
+}
+
+document.getElementById('out').innerHTML = MARKS.map(function (m) {
+  return '' +
+  '<div class="card">' +
+    '<div class="card-head">' +
+      '<span class="mono">' + m.n + '</span>' +
+      '<h2>' + m.name + '</h2>' +
+      '<p>' + m.note + '</p>' +
+    '</div>' +
+    '<div class="row">' +
+      '<div class="cell big">' + svg(m, '#fafaf9') + '</div>' +
+      '<div class="cell">' +
+        '<div class="cell-label">Header lockup</div>' +
+        '<div class="lock lock-a">' + svg(m, '#fafaf9') + '<span class="name-sans">anaxa.ai</span></div>' +
+        '<div class="lock lock-b">' + svg(m, '#fdfcf9') + '<span class="name-serif">anaxa.ai</span></div>' +
+      '</div>' +
+      '<div class="cell">' +
+        '<div class="cell-label">Browser tab</div>' +
+        '<div class="tabbar">' +
+          '<div class="tab">' + svg(m, '#ffffff') + '<span class="tab-title">Anaxa &mdash; We build&hellip;</span></div>' +
+          '<div class="tab dim"><span class="tab-title">Other tab</span></div>' +
+        '</div>' +
+        '<div class="favrow">' +
+          '<div class="fav">' + svg(m, '#ffffff', 'width="32" height="32"') + '<span class="px">32px</span></div>' +
+          '<div class="fav">' + svg(m, '#ffffff', 'width="16" height="16"') + '<span class="px">16px</span></div>' +
+        '</div>' +
+      '</div>' +
+    '</div>' +
+  '</div>';
+}).join('');
+</script>
+</body>
+</html>
