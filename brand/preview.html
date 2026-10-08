@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anaxa brand assets</title>
+<link rel="icon" href="favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600&family=Inter:wght@400&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root { --paper:#f7f7f5; --ink:#1a1a19; --mid:#5e5e5a; --dim:#96968f; --line:rgba(26,26,25,.12); }
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:Inter,sans-serif;font-size:15px;line-height:1.7}
+.wrap{max-width:860px;margin:0 auto;padding:48px 32px 80px}
+h1{font-family:'Inter Tight',sans-serif;font-weight:500;font-size:28px;letter-spacing:-.8px;margin-bottom:8px}
+.lede{color:var(--mid);margin-bottom:36px;max-width:600px}
+h2{font-family:'Inter Tight',sans-serif;font-weight:500;font-size:14px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);margin:34px 0 14px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:10px;padding:26px;display:flex;align-items:center;gap:34px;flex-wrap:wrap}
+.panel.dark{background:var(--ink)}
+.mono{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--dim)}
+.item{display:flex;flex-direction:column;align-items:center;gap:9px}
+.lockup{display:flex;align-items:center;gap:9px;font-family:'Inter Tight',sans-serif;font-weight:600;font-size:16px;letter-spacing:-.2px}
+.lockup img{width:21px;height:21px}
+.tabbar{display:flex;align-items:flex-end;gap:4px;background:#dfdfdb;padding:7px 7px 0;border-radius:8px 8px 0 0;width:max-content}
+.tab{display:flex;align-items:center;gap:7px;background:#fff;border-radius:7px 7px 0 0;padding:8px 14px 9px;font-size:12px;color:#3c3c3a;white-space:nowrap}
+.tab img{width:15px;height:15px}
+.files{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:6px}
+.files td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:middle}
+.files td:first-child{font-family:'JetBrains Mono',monospace;font-size:12px;white-space:nowrap}
+.files tr:last-child td{border-bottom:none}
+.sw{display:inline-block;width:13px;height:13px;border-radius:3px;border:1px solid rgba(26,26,25,.2);vertical-align:-2px;margin-right:7px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Anaxa brand assets</h1>
+  <p class="lede">Everything in this folder, rendered. See <code>README.md</code> for usage notes and colour tokens.</p>
+
+  <h2>The mark</h2>
+  <div class="panel">
+    <div class="item"><img src="logo-mark-ink.svg" width="80" height="80" alt=""><span class="mono">80px</span></div>
+    <div class="item"><img src="logo-mark-ink.svg" width="48" height="48" alt=""><span class="mono">48px</span></div>
+    <div class="item"><img src="logo-mark-ink.svg" width="24" height="24" alt=""><span class="mono">24px</span></div>
+    <div class="item"><img src="logo-mark-ink.svg" width="16" height="16" alt=""><span class="mono">16px</span></div>
+  </div>
+
+  <h2>On dark</h2>
+  <div class="panel dark">
+    <div class="item"><img src="logo-mark-white.svg" width="80" height="80" alt=""></div>
+    <div class="item"><img src="logo-mark-white.svg" width="48" height="48" alt=""></div>
+    <div class="item"><img src="logo-mark-white.svg" width="24" height="24" alt=""></div>
+    <div class="item"><img src="logo-mark-white.svg" width="16" height="16" alt=""></div>
+  </div>
+
+  <h2>Header lockup</h2>
+  <div class="panel">
+    <div class="lockup"><img src="logo-mark-ink.svg" alt="">anaxa.ai</div>
+  </div>
+
+  <h2>Wordmark (outlines)</h2>
+  <div class="panel"><img src="wordmark.svg" height="34" alt="anaxa.ai"></div>
+
+  <h2>Favicon</h2>
+  <div class="panel">
+    <div class="tabbar"><div class="tab"><img src="favicon.svg" alt="">Anaxa &mdash; We build custom AI&hellip;</div></div>
+    <div class="item"><img src="favicon.svg" width="32" height="32" alt=""><span class="mono">32px</span></div>
+    <div class="item"><img src="favicon.svg" width="16" height="16" alt=""><span class="mono">16px</span></div>
+  </div>
+
+  <h2>Transparency check</h2>
+  <div class="panel" style="background:repeating-conic-gradient(#e6e6e2 0% 25%,#fff 0% 50%) 50%/18px 18px">
+    <div class="item"><img src="logo-mark-ink.svg" width="80" height="80" alt=""><span class="mono">letter is punched through</span></div>
+    <div class="item"><img src="favicon.svg" width="80" height="80" alt=""><span class="mono">letter filled white</span></div>
+  </div>
+
+  <h2>Colours</h2>
+  <div class="panel" style="display:block;padding:8px 18px">
+    <table class="files">
+      <tr><td><span class="sw" style="background:#1a1a19"></span>#1a1a19</td><td>Ink &mdash; mark, headings, buttons</td></tr>
+      <tr><td><span class="sw" style="background:#f7f7f5"></span>#f7f7f5</td><td>Paper &mdash; page background</td></tr>
+      <tr><td><span class="sw" style="background:#efefec"></span>#efefec</td><td>Panel &mdash; hover states</td></tr>
+      <tr><td><span class="sw" style="background:#5e5e5a"></span>#5e5e5a</td><td>Ink mid &mdash; body copy</td></tr>
+      <tr><td><span class="sw" style="background:#96968f"></span>#96968f</td><td>Ink dim &mdash; labels, footer</td></tr>
+    </table>
+  </div>
+</div>
+</body>
+</html>
