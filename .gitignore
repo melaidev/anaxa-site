@@ -1,0 +1,12 @@
+# Impeccable / agent tooling — installed per-machine, not part of the site
+.claude/
+.cursor/
+
+# Machine-local overrides and generated review artefacts
+.impeccable/config.local.json
+.impeccable/review/
+.impeccable/mocks/
+
+# macOS
+.DS_Store
+.impeccable/questions/

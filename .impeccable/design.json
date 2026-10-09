@@ -1,0 +1,459 @@
+{
+ "schemaVersion": 2,
+ "generatedAt": "2026-10-09T00:00:00Z",
+ "title": "Design System: Anaxa AI",
+ "extensions": {
+  "colorMeta": {
+   "pine": {
+    "role": "primary",
+    "displayName": "Deep Pine",
+    "canonical": "#0f4d3f",
+    "tonalRamp": [
+     "#041711",
+     "#0a382d",
+     "#0f4d3f",
+     "#176b58",
+     "#2a9179",
+     "#63b7a3",
+     "#a6d7c9",
+     "#dcefe8"
+    ]
+   },
+   "pine-deep": {
+    "role": "primary",
+    "displayName": "Pine Deep",
+    "canonical": "#0a382d",
+    "tonalRamp": [
+     "#03110d",
+     "#06251d",
+     "#0a382d",
+     "#105243",
+     "#1a7762",
+     "#4ca28c",
+     "#94cebd",
+     "#d5ebe3"
+    ]
+   },
+   "pine-wash": {
+    "role": "primary",
+    "displayName": "Pine Wash",
+    "canonical": "#eef3f0",
+    "tonalRamp": [
+     "#16201c",
+     "#24322d",
+     "#3a4c45",
+     "#587067",
+     "#80958c",
+     "#a9bab2",
+     "#d0ded8",
+     "#eef3f0"
+    ]
+   },
+   "danger": {
+    "role": "tertiary",
+    "displayName": "Clay Red",
+    "canonical": "#8c2f1d",
+    "tonalRamp": [
+     "#2a0e08",
+     "#4a190f",
+     "#6b2416",
+     "#8c2f1d",
+     "#b24530",
+     "#cf7764",
+     "#e5ab9d",
+     "#f7ded7"
+    ]
+   },
+   "paper": {
+    "role": "neutral",
+    "displayName": "Warm Paper",
+    "canonical": "#fbfaf8",
+    "tonalRamp": [
+     "#1d1c18",
+     "#36342d",
+     "#514e45",
+     "#6f6b60",
+     "#948f81",
+     "#bcb7aa",
+     "#dedad0",
+     "#fbfaf8"
+    ]
+   },
+   "paper-sunk": {
+    "role": "neutral",
+    "displayName": "Sunk Paper",
+    "canonical": "#f3f1ec",
+    "tonalRamp": [
+     "#1b1a16",
+     "#32302a",
+     "#4c4942",
+     "#6a665c",
+     "#8f8a7d",
+     "#b6b1a4",
+     "#d8d4c9",
+     "#f3f1ec"
+    ]
+   },
+   "ink": {
+    "role": "neutral",
+    "displayName": "Ink",
+    "canonical": "#14140f",
+    "tonalRamp": [
+     "#14140f",
+     "#2a2a21",
+     "#444438",
+     "#605f51",
+     "#82806f",
+     "#a8a695",
+     "#cfcdbf",
+     "#eeece3"
+    ]
+   },
+   "ink-2": {
+    "role": "neutral",
+    "displayName": "Ink 2 (reading grey)",
+    "canonical": "#55554c",
+    "tonalRamp": [
+     "#17170f",
+     "#2c2c22",
+     "#414138",
+     "#55554c",
+     "#747468",
+     "#9b9b8e",
+     "#c6c6ba",
+     "#e9e9e0"
+    ]
+   },
+   "ink-3": {
+    "role": "neutral",
+    "displayName": "Ink 3 (quietest legible)",
+    "canonical": "#6b6b61",
+    "tonalRamp": [
+     "#1a1a14",
+     "#30302a",
+     "#4a4a42",
+     "#6b6b61",
+     "#8b8b80",
+     "#aeaea3",
+     "#cfcfc6",
+     "#efefe9"
+    ]
+   },
+   "line": {
+    "role": "neutral",
+    "displayName": "Hairline",
+    "canonical": "rgba(20,20,15,0.13)",
+    "tonalRamp": [
+     "rgba(20,20,15,0.9)",
+     "rgba(20,20,15,0.7)",
+     "rgba(20,20,15,0.5)",
+     "rgba(20,20,15,0.35)",
+     "rgba(20,20,15,0.22)",
+     "rgba(20,20,15,0.13)",
+     "rgba(20,20,15,0.07)",
+     "rgba(20,20,15,0.03)"
+    ]
+   },
+   "line-soft": {
+    "role": "neutral",
+    "displayName": "Hairline Soft",
+    "canonical": "rgba(20,20,15,0.07)",
+    "tonalRamp": [
+     "rgba(20,20,15,0.6)",
+     "rgba(20,20,15,0.42)",
+     "rgba(20,20,15,0.3)",
+     "rgba(20,20,15,0.2)",
+     "rgba(20,20,15,0.13)",
+     "rgba(20,20,15,0.07)",
+     "rgba(20,20,15,0.04)",
+     "rgba(20,20,15,0.02)"
+    ]
+   }
+  },
+  "typographyMeta": {
+   "display": {
+    "displayName": "Display",
+    "purpose": "The one page headline, capped at a 13ch measure with balanced wrapping. No label above it."
+   },
+   "headline": {
+    "displayName": "Headline",
+    "purpose": "Section headings at 32ch; also the modal title at a fixed 24px."
+   },
+   "title": {
+    "displayName": "Title",
+    "purpose": "Service-area names. One weight lighter than headings \u2014 index entries, not sections."
+   },
+   "lede": {
+    "displayName": "Lede",
+    "purpose": "The single serif paragraph under the headline, at a 54ch measure."
+   },
+   "body": {
+    "displayName": "Body",
+    "purpose": "Running serif prose at 68ch; a block's first paragraph steps up to 21px at 62ch in full ink."
+   },
+   "body-tight": {
+    "displayName": "Body Tight",
+    "purpose": "The credential sentence and service-area descriptions \u2014 reading voice at a shorter measure."
+   },
+   "label": {
+    "displayName": "Label",
+    "purpose": "Form labels in grotesk, so field chrome never competes with the serif being typed into it."
+   }
+  },
+  "shadows": [
+   {
+    "name": "modal-lift",
+    "value": "0 18px 48px -12px rgba(20,20,15,0.28), 0 2px 8px rgba(20,20,15,0.08)",
+    "purpose": "The only elevated surface in the system: the contact dialog. Wide diffuse cast plus tight contact shadow, in warm ink."
+   },
+   {
+    "name": "field-focus-ring",
+    "value": "0 0 0 3px rgba(15,77,63,0.12)",
+    "purpose": "Pine halo paired with a pine border shift on input focus. Not depth."
+   },
+   {
+    "name": "field-focus-ring-danger",
+    "value": "0 0 0 3px rgba(140,47,29,0.12)",
+    "purpose": "Same halo in clay for a field already marked aria-invalid."
+   },
+   {
+    "name": "focus-visible-outline",
+    "value": "outline: 2px solid #0f4d3f; outline-offset: 3px; border-radius: 2px",
+    "purpose": "Global keyboard focus ring on every focusable element. Pine, never the browser default."
+   }
+  ],
+  "motion": [
+   {
+    "name": "ease",
+    "value": "cubic-bezier(.22,.85,.3,1)",
+    "purpose": "The single house ease \u2014 exponential ease-out from an already-visible default. Every transition and animation in the system uses it."
+   },
+   {
+    "name": "state",
+    "value": "180\u2013200ms",
+    "purpose": "Colour and border shifts on hover, focus and validation."
+   },
+   {
+    "name": "nudge",
+    "value": "250ms",
+    "purpose": "The arrow sliding 3px right inside an action button on hover."
+   },
+   {
+    "name": "dialog-rise",
+    "value": "340ms",
+    "purpose": "The modal fading in and rising 14px on open."
+   },
+   {
+    "name": "resolve-crossfade",
+    "value": "260ms",
+    "purpose": "Form out / confirmation in, inside the form shell."
+   },
+   {
+    "name": "resolve-height",
+    "value": "440ms",
+    "purpose": "The form shell animating its own height to the confirmation's height \u2014 the one authored moment."
+   },
+   {
+    "name": "reduced-motion",
+    "value": "all transitions and animations clamped to .01ms; scroll-behavior reset to auto",
+    "purpose": "prefers-reduced-motion honours the whole system, including the authored moment."
+   }
+  ],
+  "breakpoints": [
+   {
+    "name": "narrow",
+    "value": "760px"
+   }
+  ]
+ },
+ "components": [
+  {
+   "name": "Primary Button",
+   "kind": "button",
+   "refersTo": "button-primary",
+   "description": "The one action on the page: open or send the contact form. Pine fill, white label, arrow that slides on hover.",
+   "html": "<button class=\"ds-btn-primary\" type=\"button\">Start a conversation<svg width=\"15\" height=\"12\" viewBox=\"0 0 15 12\" fill=\"none\" aria-hidden=\"true\"><path d=\"M1 6h12M9.5 1.5 14 6l-4.5 4.5\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></button>",
+   "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 10px; font-family: 'Archivo', system-ui, sans-serif; font-size: 16px; font-weight: 500; background: #0f4d3f; color: #fff; border: none; border-radius: 3px; padding: 14px 24px; cursor: pointer; transition: background .2s cubic-bezier(.22,.85,.3,1), transform .2s cubic-bezier(.22,.85,.3,1); } .ds-btn-primary:hover { background: #0a382d; } .ds-btn-primary:active { transform: translateY(1px); } .ds-btn-primary:focus-visible { outline: 2px solid #0f4d3f; outline-offset: 3px; } .ds-btn-primary svg { transition: transform .25s cubic-bezier(.22,.85,.3,1); } .ds-btn-primary:hover svg { transform: translateX(3px); }"
+  },
+  {
+   "name": "Quiet Button",
+   "kind": "button",
+   "refersTo": "button-quiet",
+   "description": "The alternative path that sits beside every primary. Hairline underline, no fill, no radius.",
+   "html": "<a class=\"ds-btn-quiet\" href=\"#areas\">See what we work on</a>",
+   "css": ".ds-btn-quiet { font-family: 'Archivo', system-ui, sans-serif; font-size: 16px; color: #55554c; text-decoration: none; background: none; border: none; cursor: pointer; padding: 0; border-bottom: 1px solid rgba(20,20,15,0.13); transition: color .2s cubic-bezier(.22,.85,.3,1), border-color .2s cubic-bezier(.22,.85,.3,1); } .ds-btn-quiet:hover { color: #0f4d3f; border-color: #0f4d3f; } .ds-btn-quiet:focus-visible { outline: 2px solid #0f4d3f; outline-offset: 3px; border-radius: 2px; }"
+  },
+  {
+   "name": "Header Link",
+   "kind": "nav",
+   "refersTo": "button-header",
+   "description": "A dialog trigger styled as navigation: ink text over a 1.5px pine underline.",
+   "html": "<button class=\"ds-header-link\" type=\"button\">Get in touch</button>",
+   "css": ".ds-header-link { font-family: 'Archivo', system-ui, sans-serif; font-size: 15.5px; font-weight: 500; color: #14140f; background: none; border: none; cursor: pointer; padding: 6px 0; border-bottom: 1.5px solid #0f4d3f; transition: color .2s cubic-bezier(.22,.85,.3,1), border-color .2s cubic-bezier(.22,.85,.3,1); } .ds-header-link:hover { color: #0f4d3f; } .ds-header-link:focus-visible { outline: 2px solid #0f4d3f; outline-offset: 3px; border-radius: 2px; }"
+  },
+  {
+   "name": "Wordmark",
+   "kind": "nav",
+   "refersTo": null,
+   "description": "The 22px two-tile mark with a two-storey lowercase 'a' knocked out in paper, plus the lockup in Archivo 600.",
+   "html": "<a class=\"ds-wordmark\" href=\"/\" aria-label=\"Anaxa home\"><svg viewBox=\"0 0 64 64\" fill=\"none\" aria-hidden=\"true\"><rect x=\"11\" y=\"2\" width=\"51\" height=\"51\" rx=\"13\" fill=\"currentColor\" opacity=\".26\"/><rect x=\"2\" y=\"11\" width=\"51\" height=\"51\" rx=\"13\" fill=\"currentColor\"/><path d=\"M24.81 51Q22.13 51 19.99 50.03Q17.86 49.07 16.63 47.18Q15.4 45.3 15.4 42.54Q15.4 40.18 16.28 38.62Q17.16 37.06 18.67 36.14Q20.19 35.21 22.1 34.72Q24.01 34.23 26.04 34.03Q28.53 33.75 30.06 33.55Q31.59 33.35 32.28 32.9Q32.97 32.45 32.97 31.49V31.37Q32.97 29.33 31.77 28.2Q30.56 27.07 28.25 27.07Q25.82 27.07 24.4 28.13Q22.98 29.18 22.48 30.61L16.33 29.73Q17.05 27.17 18.74 25.45Q20.42 23.73 22.84 22.87Q25.27 22 28.2 22Q30.21 22 32.22 22.46Q34.23 22.93 35.91 24.03Q37.59 25.14 38.6 27Q39.6 28.85 39.6 31.64V50.42H33.25V46.56H33.05Q32.45 47.71 31.35 48.73Q30.26 49.74 28.64 50.37Q27.02 51 24.81 51ZM26.5 46.13Q28.5 46.13 29.96 45.34Q31.42 44.55 32.22 43.23Q33.02 41.91 33.02 40.35V37.06Q32.7 37.32 31.97 37.53Q31.24 37.74 30.31 37.92Q29.38 38.09 28.49 38.22Q27.6 38.35 26.95 38.42Q25.47 38.62 24.3 39.09Q23.13 39.55 22.45 40.35Q21.78 41.16 21.78 42.44Q21.78 44.27 23.11 45.2Q24.44 46.13 26.5 46.13Z\" fill=\"#fbfaf8\"/></svg>anaxa.ai</a>",
+   "css": ".ds-wordmark { display: inline-flex; align-items: center; gap: 9px; font-family: 'Archivo', system-ui, sans-serif; font-weight: 600; font-size: 17px; letter-spacing: -0.01em; color: #14140f; text-decoration: none; } .ds-wordmark svg { width: 22px; height: 22px; flex-shrink: 0; color: #14140f; } .ds-wordmark:focus-visible { outline: 2px solid #0f4d3f; outline-offset: 3px; border-radius: 2px; }"
+  },
+  {
+   "name": "Text Field",
+   "kind": "input",
+   "refersTo": "input-field",
+   "description": "Grotesk label over a serif input: the user's own words get the reading face. Pine border and halo on focus, pine caret.",
+   "html": "<div class=\"ds-field\"><label for=\"ds-email\">Email</label><input type=\"email\" id=\"ds-email\" placeholder=\"you@example.com\"><p class=\"ds-field-error\">We need an email address to reply to.</p></div>",
+   "css": ".ds-field label { display: block; font-family: 'Archivo', system-ui, sans-serif; font-size: 14.5px; font-weight: 500; color: #14140f; margin-bottom: 7px; } .ds-field input { width: 100%; font-family: 'Source Serif 4', Georgia, serif; font-size: 17px; color: #14140f; background: #fff; border: 1px solid rgba(20,20,15,0.13); border-radius: 3px; padding: 11px 13px; outline: none; caret-color: #0f4d3f; transition: border-color .18s cubic-bezier(.22,.85,.3,1), box-shadow .18s cubic-bezier(.22,.85,.3,1); } .ds-field input::placeholder { color: #6b6b61; } .ds-field input:focus { border-color: #0f4d3f; box-shadow: 0 0 0 3px rgba(15,77,63,0.12); } .ds-field input[aria-invalid=\"true\"] { border-color: #8c2f1d; } .ds-field input[aria-invalid=\"true\"]:focus { border-color: #8c2f1d; box-shadow: 0 0 0 3px rgba(140,47,29,0.12); } .ds-field-error { margin-top: 6px; font-family: 'Source Serif 4', Georgia, serif; font-size: 15.5px; line-height: 1.45; color: #8c2f1d; }"
+  },
+  {
+   "name": "Credential Statement",
+   "kind": "custom",
+   "refersTo": null,
+   "description": "The trust asset stated as a sentence under the only heavy rule in the system \u2014 not a badge, not a card.",
+   "html": "<div class=\"ds-credential\"><p>Anaxa is a registered member of the <strong>Claude Partner Network</strong>. Every system we build is designed by a <strong>Claude Certified Architect</strong>, so it follows Anthropic&rsquo;s own best practices for building on Claude.</p></div>",
+   "css": ".ds-credential { margin-top: 52px; padding-top: 22px; border-top: 2px solid #0f4d3f; max-width: 62ch; } .ds-credential p { font-family: 'Source Serif 4', Georgia, serif; font-size: 17.5px; line-height: 1.6; color: #14140f; } .ds-credential strong { font-weight: 600; }"
+  },
+  {
+   "name": "Service Ledger Row",
+   "kind": "custom",
+   "refersTo": null,
+   "description": "The no-card alternative to a service grid: a two-column ledger row bracketed by hairlines, collapsing to a stacked term-and-definition pair below 760px.",
+   "html": "<div class=\"ds-areas\"><div class=\"ds-area\"><h3>Agentic Workflows</h3><p>Multi-step agents that handle real work, not demos &mdash; with clear tool interfaces, predictable behavior, and guardrails built in from the start.</p></div><div class=\"ds-area\"><h3>RAG &amp; Internal Knowledge</h3><p>Retrieval systems over your own documentation, policies, and institutional knowledge &mdash; so teams get answers with sources attached instead of plausible guesses.</p></div></div>",
+   "css": ".ds-areas { border-top: 1px solid rgba(20,20,15,0.13); } .ds-area { display: grid; grid-template-columns: minmax(0,0.85fr) minmax(0,1.15fr); gap: 32px; padding: 26px 0; border-bottom: 1px solid rgba(20,20,15,0.07); } .ds-area:last-child { border-bottom: 1px solid rgba(20,20,15,0.13); } .ds-area h3 { font-family: 'Archivo', system-ui, sans-serif; font-weight: 500; font-size: 19px; letter-spacing: -0.015em; line-height: 1.3; margin: 0; } .ds-area p { font-family: 'Source Serif 4', Georgia, serif; font-size: 17.5px; line-height: 1.62; color: #55554c; margin: 0; } @media (max-width: 760px) { .ds-area { grid-template-columns: 1fr; gap: 9px; padding: 22px 0; } }"
+  },
+  {
+   "name": "Contact Band",
+   "kind": "custom",
+   "refersTo": "contact-band",
+   "description": "The one full-bleed ground change in the system. A section feels different by changing colour edge-to-edge, not by becoming a box.",
+   "html": "<section class=\"ds-band\"><div class=\"ds-band-inner\"><h2>Tell us what you&rsquo;re working on.</h2><p>Send us a note about the problem you&rsquo;re trying to solve. We&rsquo;ll tell you honestly whether we&rsquo;re the right fit.</p></div></section>",
+   "css": ".ds-band { background: #eef3f0; padding: 76px 0; } .ds-band-inner { max-width: 1080px; margin: 0 auto; padding: 0 32px; } .ds-band h2 { font-family: 'Archivo', system-ui, sans-serif; font-weight: 600; font-size: clamp(27px, 3.1vw, 36px); line-height: 1.15; letter-spacing: -0.025em; max-width: 32ch; text-wrap: balance; margin: 0; } .ds-band p { font-family: 'Source Serif 4', Georgia, serif; font-size: 19px; line-height: 1.65; color: #55554c; max-width: 54ch; margin-top: 18px; } @media (max-width: 760px) { .ds-band { padding: 56px 0; } }"
+  },
+  {
+   "name": "Resolved Confirmation",
+   "kind": "custom",
+   "refersTo": null,
+   "description": "The end state of the system's one authored moment: the form shell cross-fades and animates its own height into this confirmation in place, rather than swapping to a success screen.",
+   "html": "<div class=\"ds-form-done\"><span class=\"ds-mark\" aria-hidden=\"true\"><svg width=\"13\" height=\"10\" viewBox=\"0 0 13 10\" fill=\"none\"><path d=\"M1 5l3.6 3.6L12 1.2\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></span>Message sent. <span class=\"ds-echo\">We&rsquo;ll reply to you@example.com.</span></div>",
+   "css": ".ds-form-done { font-family: 'Source Serif 4', Georgia, serif; font-size: 18px; line-height: 1.6; color: #14140f; padding: 6px 0 4px; transition: opacity .26s cubic-bezier(.22,.85,.3,1); } .ds-form-done .ds-echo { color: #55554c; } .ds-form-done .ds-mark { display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; border-radius: 50%; background: #0f4d3f; color: #fff; margin-right: 10px; vertical-align: -6px; }"
+  },
+  {
+   "name": "Contact Dialog",
+   "kind": "card",
+   "refersTo": "modal-panel",
+   "description": "The only elevated surface in the system. Paper panel on a warm-ink scrim, rising 14px on open, with an 'Esc' affordance instead of a glyph close button.",
+   "html": "<div class=\"ds-overlay\"><div class=\"ds-modal\"><div class=\"ds-modal-top\"><h3>Get in touch</h3><button class=\"ds-modal-esc\" type=\"button\" aria-label=\"Close dialog\">Esc</button></div><p class=\"ds-modal-body\">Form fields sit here.</p></div></div>",
+   "css": ".ds-overlay { background: rgba(20,20,15,0.42); display: flex; align-items: center; justify-content: center; padding: 24px; } @supports (backdrop-filter: blur(3px)) { .ds-overlay { backdrop-filter: blur(3px); } } .ds-modal { background: #fbfaf8; width: 100%; max-width: 540px; border-radius: 5px; padding: 32px; box-shadow: 0 18px 48px -12px rgba(20,20,15,0.28), 0 2px 8px rgba(20,20,15,0.08); animation: ds-rise .34s cubic-bezier(.22,.85,.3,1) both; } @keyframes ds-rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } } .ds-modal-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px; } .ds-modal-top h3 { font-family: 'Archivo', system-ui, sans-serif; font-weight: 600; font-size: 24px; letter-spacing: -0.02em; margin: 0; } .ds-modal-esc { font-family: 'Archivo', system-ui, sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.02em; color: #6b6b61; background: none; border: 1px solid rgba(20,20,15,0.13); border-radius: 3px; padding: 4px 9px; cursor: pointer; transition: color .2s cubic-bezier(.22,.85,.3,1), border-color .2s cubic-bezier(.22,.85,.3,1); } .ds-modal-esc:hover { color: #14140f; border-color: #6b6b61; } .ds-modal-esc:focus-visible { outline: 2px solid #0f4d3f; outline-offset: 3px; } .ds-modal-body { font-family: 'Source Serif 4', Georgia, serif; font-size: 17.5px; line-height: 1.6; color: #55554c; margin: 0; } @media (max-width: 760px) { .ds-modal { padding: 24px; } } @media (prefers-reduced-motion: reduce) { .ds-modal { animation: none; } }"
+  }
+ ],
+ "narrative": {
+  "northStar": "The Credentialed Letterhead",
+  "overview": "This is the category standard for a serious practice site, executed at full fidelity rather than decorated. Warm paper carries near-black ink; a single deep pine does every job colour is allowed to do. Nothing is arranged to look clever. The page reads like a well-set letter from a firm that does not need to shout: full-width paper, a left-aligned headline on a tight measure, a serif paragraph beneath it, and the credential stated as a sentence under a pine rule rather than packaged as a badge.\n\nDensity is deliberately low and the rhythm is vertical. There is no grid of tiles, no container to put things in, no numbered agenda. Hairline rules and large vertical gaps do all the dividing, so the only things competing for attention are words. The register split is the mechanism: Archivo for anything structural or interactive, Source Serif 4 for anything meant to be read. A reader who skims sees grotesk; a reader who settles in sees serif. Register changes carry hierarchy so size doesn't have to.\n\nConfirmed rejections, honoured by the build: no eyebrow or kicker labels above headings, no numbered sections, no card containers for content, no monospace anywhere, no gradients, no glass, no hero image, no stats, nothing centred, no heavy display weights (600 is the ceiling). The craft bar named for this project \u2014 Anthropic, OpenAI, Scale \u2014 is a bar for finish: generous whitespace, editorial tone, research-adjacent calm. It is not permission to borrow any of their palettes, typefaces or marks, and this system borrows none.",
+  "keyCharacteristics": [
+   "Warm paper ground under near-black ink, never pure white or pure black",
+   "One committed colour (pine) doing structural work, not scattered as accent",
+   "Grotesk for structure, serif for reading \u2014 register carries hierarchy",
+   "Hairline rules and space instead of cards, boxes or dividers with weight",
+   "Flat at rest; the only elevated surface in the system is the modal",
+   "One authored motion moment, nothing on scroll",
+   "Every text/background pair clears WCAG AA with margin"
+  ],
+  "rules": [
+   {
+    "name": "The One Pine Rule",
+    "body": "Pine is a single committed colour doing real jobs \u2014 primary action, credential rule, links, focus ring, caret, selection. If a new element wants pine for emphasis rather than for one of those jobs, it does not get pine.",
+    "section": "colors"
+   },
+   {
+    "name": "The Warm Neutrals Rule",
+    "body": "Nothing in the system is #000 or #fff except the knocked-out text on pine fills and the input field ground. Every other neutral carries the warm cast.",
+    "section": "colors"
+   },
+   {
+    "name": "The Measured Contrast Rule",
+    "body": "Every text/background pair in the build clears WCAG AA; the lowest measured is 5.16:1 (Ink 3 on paper). Accessibility here is a recorded constraint, not an aspiration: any palette change must be re-measured against every pair it touches before it ships.",
+    "section": "colors"
+   },
+   {
+    "name": "The Register Rule",
+    "body": "Grotesk for structure and interaction \u2014 headings, wordmark, buttons, labels, chrome. Serif for every passage meant to be read \u2014 lede, prose, credential, service descriptions, confirmations, error messages. Register changes with purpose, which is why size does not have to carry hierarchy alone.",
+    "section": "typography"
+   },
+   {
+    "name": "The No Mono Rule",
+    "body": "There is no monospace anywhere in the system, deliberately. Code voice would make a consultancy read as a tooling vendor.",
+    "section": "typography"
+   },
+   {
+    "name": "The Bare Heading Rule",
+    "body": "Headings stand alone. No kicker, no eyebrow, no all-caps label, no 01\u201306 section number above or beside them. Weight ceiling is 600; heavier display weights were rejected.",
+    "section": "typography"
+   },
+   {
+    "name": "The Measure Rule",
+    "body": "Every text block is capped in ch, not in pixels: 13ch display, 32ch headings, 54ch lede, 62\u201368ch prose. Line length is a typographic decision, not a side effect of the container.",
+    "section": "typography"
+   },
+   {
+    "name": "The One Measure Rule",
+    "body": "1080px, one column, left-aligned. New sections get vertical space and a hairline, not a new container width or a nested grid.",
+    "section": "layout"
+   },
+   {
+    "name": "The Full-Bleed Band Rule",
+    "body": "When a section needs to feel different, it changes the ground colour edge-to-edge and keeps the same inner measure. It does not become a box inset from the page.",
+    "section": "layout"
+   },
+   {
+    "name": "The Flat Page Rule",
+    "body": "Nothing on the page is lifted. Shadow is reserved for the one surface that genuinely floats above the document, the modal. A content block that wants a shadow wants a hairline instead.",
+    "section": "elevation"
+   },
+   {
+    "name": "The No Container Rule",
+    "body": "Content is not boxed. There are no cards, panels, tiles or wells for content anywhere in the system; the modal is a dialog, not a card, and the contact band is a ground change, not a container.",
+    "section": "shapes"
+   },
+   {
+    "name": "The Single Heavy Line Rule",
+    "body": "Exactly one rule in the system has weight and colour: the 2px pine line above the credential. Everything else divides at 1px in translucent ink.",
+    "section": "shapes"
+   },
+   {
+    "name": "The One Moment Rule",
+    "body": "This system animates one thing on purpose: the form resolving in place. Everything else moves only as a direct response to input \u2014 colour shifts at 180\u2013200ms, the arrow nudge at 250ms, the dialog rise at 340ms. Nothing animates on scroll, nothing animates on load, nothing reveals itself as the reader arrives. All of it runs on the single house ease, and all of it is cut to ~0ms under prefers-reduced-motion.",
+    "section": "components"
+   },
+   {
+    "name": "The Themed Chrome Rule",
+    "body": "The browser's own surfaces belong to the palette: selection is pine on white, the scrollbar is a warm thumb in a sunk-paper track (webkit and Firefox both), focus rings are pine, the caret is pine, link underlines are offset 3px at 1px thickness, and scrollbar-gutter: stable keeps the measure from shifting when the dialog locks scroll.",
+    "section": "components"
+   }
+  ],
+  "dos": [
+   "Do give pine one of its six jobs \u2014 primary action, credential rule, link, focus ring, caret, selection \u2014 or don't use it.",
+   "Do set every readable passage in Source Serif 4 and everything structural in Archivo. The register split is the identity.",
+   "Do cap text blocks in ch (13 / 32 / 54 / 62 / 68) rather than letting the container decide line length.",
+   "Do divide with 1px translucent hairlines and large vertical space (72\u2013112px between sections).",
+   "Do change the ground colour full-bleed when a section needs to feel different, and keep the inner measure.",
+   "Do re-measure every text/background pair against WCAG AA before changing any palette value; the current floor is 5.16:1.",
+   "Do run every transition on cubic-bezier(.22,.85,.3,1) and keep durations between 180ms and 440ms.",
+   "Do keep warm neutrals; reach for Ink/Paper, not black and white.",
+   "Do inline icons as SVG with 1.5px round-capped strokes."
+  ],
+  "donts": [
+   "Don't put a kicker, eyebrow, all-caps label or section number (01\u201306) above a heading. Headings stand alone.",
+   "Don't box content. No cards, tiles, panels or wells \u2014 the modal is a dialog, not a precedent.",
+   "Don't introduce monospace. There is none in the system by decision.",
+   "Don't use gradients or glass. The one blur in the build is the modal scrim.",
+   "Don't add shadow to anything on the page; shadow belongs to the modal alone.",
+   "Don't animate on scroll, on load, or as a reveal. One authored moment, and it is the form resolving.",
+   "Don't go heavier than 600 on display type, and don't centre body or heading text.",
+   "Don't scatter pine as a tint, highlight or decorative accent, and don't pair it with the clay red.",
+   "Don't borrow Anthropic's (or OpenAI's or Scale's) palette, typefaces or logo treatment. They set the finish bar only; Anaxa is a Claude Partner Network member and the resemblance would be both a guidelines problem and a loss of identity.",
+   "Don't add a second accent colour. If something needs distinguishing, use register, measure or space."
+  ]
+ }
+}
